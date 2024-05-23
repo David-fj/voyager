@@ -1,10 +1,5 @@
-let b = "";
+function slv() {
+    let sera = "oba"
 
-function a() {
-    console.log("Pedrim é gay!");
-    localStorage.setItem("ab", "Sexo");
-}
-
-function b() {
-    localStorage.getItem("ab");
+    localStorage.setItem("Teste", sera);
 }
