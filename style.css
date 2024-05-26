@@ -2,4 +2,127 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --white-color: #fff;
+    --nav-color: #262626;
+    --text-logo-color: #F4F4F4;
+    --border-cads: #45BAF2;
+}
+
+header{
+    height: 6.0625rem;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    background: var(--nav-color);
+    width: 100%;
+    height: 6.0625rem;
+}
+
+.logo{
+    height: 5rem;
+    width: 5rem;
+}
+
+.image-header{
+    height: 1.25rem;
+    width: 1.25rem;
+}
+
+.cadastro-header ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+}
+
+header ul li, .cadastro-header a {
+    display: flex;
+    align-items: center;
+    
+    color: var(--text-logo-color);
+}
+
+.entrar{
+    border: none;
+    width: 7.5rem;
+    height: 2.5rem;
+    font-weight: 400;
+    font-style: normal;
+    align-items: center;
+    justify-content: space-around;
+}
+/*Resolver a borda -> está alterando a palvra "entrar" no hover*/
+.entrar:hover{
+    border-bottom: 1px solid var(--border-cads);
+}
+
+.b-cadastro{
+    border: 1px solid var(--border-cads);
+    border-radius: 0.5rem;
+    margin: 0 1rem 0 1rem;
+    width: 12rem;
+    height: 2.5rem;
+    font-weight: 400;
+    font-style: normal;
+    align-items: center;
+    justify-content: space-around;
+    transition: 300ms;
+}
+
+.b-cadastro:hover{
+    background: var(--border-cads);
+}
+
+.cadastro-header a{
+    text-decoration: none;
+}
+
+.cadastro-header a img{
+    margin-left: 0.75rem;
+}
+
+li , ul div li{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+main{
+    display: flex;
+    flex-direction: column;
+}
+
+.cad-main{
+    background: linear-gradient(#115575, #000);
+    height: 36rem;
+    color: var(--text-logo-color);
+    text-align: left;
+    padding-left: 4rem;
+}
+
+.cad-main h2{
+    font-weight: 700;
+    margin-top: 5.625rem;
+}
+
+.cad-main p{
+    font-weight: 100;
+    width: 55rem;
+    height: auto;
+    margin-top: 2rem;
+}
+
+.cad-main span{
+    color: var(--border-cads);
 }
