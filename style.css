@@ -67,6 +67,7 @@ header ul li, .cadastro-header a {
     font-style: normal;
     align-items: center;
     justify-content: center;
+    transition: 300ms;
 }
 
 .entrar:hover{
