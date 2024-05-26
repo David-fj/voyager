@@ -35,6 +35,14 @@ nav{
     gap: 2rem;
 }
 
+.navList li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-logo-color);
+    text-decoration: none;
+}
+
 .logo{
     height: 5rem;
     width: 5rem;
