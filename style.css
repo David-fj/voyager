@@ -10,6 +10,13 @@
     --nav-color: #262626;
     --text-logo-color: #F4F4F4;
     --border-cads: #45BAF2;
+    --green-blue-darker: #061E29;
+}
+
+body{
+    height: 100svh;
+    background: black;
+    color: var(--white-color);
 }
 
 header{
@@ -114,7 +121,7 @@ main{
 
 .cad-main{
     background: linear-gradient(#115575, #000);
-    height: 36rem;
+    height: 25rem;
     color: var(--text-logo-color);
     text-align: left;
     padding-left: 4rem;
@@ -130,8 +137,21 @@ main{
     width: 55rem;
     height: auto;
     margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .cad-main span{
     color: var(--border-cads);
+}
+
+.cad-main button{
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 0.5rem;
+    color: var(--border-cads);
+    background: var(--green-blue-darker);
+}
+
+.planetsec img{
+    position: absolute;
 }
