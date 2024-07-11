@@ -177,6 +177,7 @@ span{
 .planetsec img{
     position: absolute;
     z-index: -2;
+    width: 100%;
 }
 
 .planetsec ul{
