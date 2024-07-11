@@ -148,7 +148,7 @@ main{
     margin-bottom: 2rem;
 }
 
-.cad-main span{
+span{
     color: var(--border-cads);
 }
 
@@ -158,8 +158,30 @@ main{
     border-radius: 0.5rem;
     color: var(--border-cads);
     background: var(--green-blue-darker);
+    transition: 0.3s;
+}
+
+.cad-main button:hover{
+    background: var(--border-cads);
+    color: var(--green-blue-darker);
+}
+
+.planetsec{
+    height: 43rem;
+}
+
+.planetsec h2{
+    margin: 4rem 0 4rem 4rem;
 }
 
 .planetsec img{
     position: absolute;
+    z-index: -2;
+}
+
+.planetsec ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
 }
