@@ -11,6 +11,14 @@
     --text-logo-color: #F4F4F4;
     --border-cads: #45BAF2;
     --green-blue-darker: #061E29;
+    --background-planet: url('./src/images/section-planet.svg');
+
+    --background-estudo1: url('./src/images/estudobk.svg');
+    --background-estudo2: url('./src/images/estudobk2.svg');
+    --background-estudo3: url('./src/images/estudobk3.svg');
+    --background-estudo4: url('./src/images/estudobk4.svg');
+    --background-estudo5: url('./src/images/estudobk5.svg');
+    --background-estudo6: url('./src/images/estudobk6.svg');
 }
 
 body{
@@ -125,6 +133,7 @@ li , ul div li{
 main{
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .cad-main{
@@ -167,22 +176,53 @@ span{
 }
 
 .planetsec{
-    height: 43rem;
+    height: auto;
+    width: 100%;
 }
+
+.planetsec .bk{
+    height: 21.5rem;
+    background: center;
+    background-image: var(--background-planet);
+    background-attachment: scroll;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+}
+
 
 .planetsec h2{
-    margin: 4rem 0 4rem 4rem;
-}
-
-.planetsec img{
-    position: absolute;
-    z-index: -2;
-    width: 100%;
+    margin: 10.75rem 0 6.15rem 4rem;
 }
 
 .planetsec ul{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+    gap: 5rem;
+    width: 100%;
+}
+
+.planetsec li{
+    border: 1px solid blue;
+    height: 14.5rem;
+    width: 24.625rem;
+}
+
+.planetsec .first, .second{
+    display: flex;
+    flex-direction: row;
+}
+
+.planetsec ul a{
+    text-decoration: none;
+    color: var(--text-logo-color);
+}
+
+/*Atribuindo os backgrounds dos estudos*/
+
+.estudobk{
     width: 100%;
 }
