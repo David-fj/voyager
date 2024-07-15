@@ -13,12 +13,12 @@
     --green-blue-darker: #061E29;
     --background-planet: url('./src/images/section-planet.svg');
 
-    --background-estudo1: url('./src/images/estudobk.svg');
-    --background-estudo2: url('./src/images/estudobk2.svg');
-    --background-estudo3: url('./src/images/estudobk3.svg');
-    --background-estudo4: url('./src/images/estudobk4.svg');
-    --background-estudo5: url('./src/images/estudobk5.svg');
-    --background-estudo6: url('./src/images/estudobk6.svg');
+    --background-estudo1: url('./src/images/bkest1.jpg');
+    --background-estudo2: url('./src/images/bkest2.jpg');
+    --background-estudo3: url('./src/images/bkest3.jpg');
+    --background-estudo4: url('./src/images/bkest4.jpg');
+    --background-estudo5: url('./src/images/bkest5.jpg');
+    --background-estudo6: url('./src/images/bkest6.jpg');
 }
 
 body{
@@ -197,18 +197,26 @@ span{
     margin: 10.75rem 0 6.15rem 4rem;
 }
 
+
+/*ESTUDOS*/
+
 .planetsec ul{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5rem;
     width: 100%;
+
+}
+
+.planetsec ul .first, .planetsec ul .second{
+    gap: 5rem;
 }
 
 .planetsec li{
-    border: 1px solid blue;
     height: 14.5rem;
     width: 24.625rem;
+    align-items: initial;
 }
 
 .planetsec .first, .second{
@@ -221,8 +229,55 @@ span{
     color: var(--text-logo-color);
 }
 
-/*Atribuindo os backgrounds dos estudos*/
+.planetsec ul li div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+    margin-bottom: 3rem;
+}
+
+.planetsec ul li p{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    text-align: justify;
+}
+
+.planetsec ul li img{
+    border: 1px solid red;
+    padding: 1rem;
+}
+
+/*BACKGROUNDS*/
 
 .estudobk{
-    width: 100%;
+    background-image: var(--background-estudo1);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.estudobk2{
+    background-image: var(--background-estudo2);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.estudobk3{
+    background-image: var(--background-estudo3);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.estudobk4{
+    background-image: var(--background-estudo4);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.estudobk5{
+    background-image: var(--background-estudo5);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.estudobk6{
+    background-image: var(--background-estudo6);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
