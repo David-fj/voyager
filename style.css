@@ -11,19 +11,52 @@
     --text-logo-color: #F4F4F4;
     --border-cads: #45BAF2;
     --green-blue-darker: #061E29;
-    --background-planet: url('./src/images/section-planet.svg');
+    --background-planet: url('./src/images/earth-seen-from-space.webp');
 
-    --background-estudo1: url('./src/images/bkest1.jpg');
-    --background-estudo2: url('./src/images/bkest2.jpg');
-    --background-estudo3: url('./src/images/bkest3.jpg');
-    --background-estudo4: url('./src/images/bkest4.jpg');
-    --background-estudo5: url('./src/images/bkest5.jpg');
-    --background-estudo6: url('./src/images/bkest6.jpg');
+    --background-estudo1: url('./src/images/bkest1.webp');
+    --background-estudo2: url('./src/images/bkest2.webp');
+    --background-estudo3: url('./src/images/bkest3.webp');
+    --background-estudo4: url('./src/images/bkest4.webp');
+    --background-estudo5: url('./src/images/bkest5.webp');
+    --background-estudo6: url('./src/images/bkest6.webp');
+}
+
+/*BACKGROUNDS*/
+
+.estudobk{
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)) ,var(--background-estudo1);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.estudobk2{
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--background-estudo2);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.estudobk3{
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--background-estudo3);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.estudobk4{
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--background-estudo4);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.estudobk5{
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--background-estudo5);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.estudobk6{
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--background-estudo6);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 body{
     height: 100svh;
-    background: black;
     color: var(--white-color);
 }
 
@@ -179,18 +212,11 @@ span{
 .planetsec{
     height: auto;
     width: 100%;
-}
 
-.planetsec .bk{
-    height: 21.5rem;
-    background: center;
-    background-image: var(--background-planet);
-    background-attachment: scroll;
-    background-position: top;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--background-planet);
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    position: absolute;
-    width: 100%;
 }
 
 
@@ -257,36 +283,8 @@ span{
     width: 3rem;
 }
 
-/*BACKGROUNDS*/
-
-.estudobk{
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)) ,var(--background-estudo1);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.estudobk2{
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--background-estudo2);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-.estudobk3{
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--background-estudo3);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.estudobk4{
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--background-estudo4);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.estudobk5{
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--background-estudo5);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.estudobk6{
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--background-estudo6);
-    background-repeat: no-repeat;
-    background-size: cover;
+.perguntas{
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
 }
