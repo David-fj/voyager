@@ -11,14 +11,15 @@
     --text-logo-color: #F4F4F4;
     --border-cads: #45BAF2;
     --green-blue-darker: #061E29;
+    --cad-main-bk: #115575;
     --background-planet: url('./src/images/earth-seen-from-space.webp');
 
-    --background-estudo1: url('./src/images/pato-445x445.jpeg');
-    --background-estudo2: url('./src/images/pato-445x445.jpeg');
-    --background-estudo3: url('./src/images/pato-445x445.jpeg');
-    --background-estudo4: url('./src/images/pato-445x445.jpeg');
-    --background-estudo5: url('./src/images/pato-445x445.jpeg');
-    --background-estudo6: url('./src/images/pato-445x445.jpeg');
+    --background-estudo1: url('./src/images/bkest1.webp');
+    --background-estudo2: url('./src/images/bkest2.webp');
+    --background-estudo3: url('./src/images/bkest3.webp');
+    --background-estudo4: url('./src/images/bkest4.webp');
+    --background-estudo5: url('./src/images/bkest5.webp');
+    --background-estudo6: url('./src/images/bkest6.webp');
 }
 
 /*BACKGROUNDS*/
@@ -30,6 +31,7 @@
 }
 .estudobk2{
     background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--background-estudo2);
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -74,6 +76,10 @@ nav{
     padding: 1rem;
 }
 
+button{
+    cursor: pointer;
+}
+
 .navList {
     width: 100%;
     display: flex;
@@ -110,6 +116,7 @@ nav{
 header ul li, .cadastro-header a {
     display: flex;
     align-items: center;
+    background: transparent;
     
     color: var(--text-logo-color);
 }
@@ -170,11 +177,12 @@ main{
 }
 
 .cad-main{
-    background: linear-gradient(#115575, #000);
-    height: 25rem;
+    background: var(--cad-main-bk);
+    height: auto;
     color: var(--text-logo-color);
     text-align: justify;
     padding-left: 4rem;
+    padding-bottom: 2rem;
 }
 
 .cad-main h2{
@@ -213,7 +221,7 @@ span{
     width: 100%;
     padding-bottom: 10rem;
     background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--background-planet);
-    background-attachment: scroll;
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -282,13 +290,77 @@ span{
     width: 3rem;
 }
 
+/*PERGUNTAS*/
+
 .perguntas{
-    border: 1px solid red;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
     background: black;
     height: 25rem;
     text-align: justify;
-    padding-left: 4rem;
+    gap: 10rem;
+}
+
+.perguntas button{
+    background: transparent;
+    border: none;
+    color: var(--white-color);
+    text-align: right;
+    font-weight: 300;
+    font-size: 1.25rem;
+    padding: 0.25rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    gap: 1rem;
+
+    display: flex;
+    align-items: center;
+}
+
+.perguntas button:hover{
+    filter: drop-shadow(0 0 0.5rem var(--white-color));
+}
+
+.perguntas button img{
+    transform: rotate(180deg);
+}
+
+/*FOOTER*/
+
+footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+    height: 10rem;
+
+    background: var(--nav-color);
+}
+
+footer div{
+    border: 1px solid var(--white-color);
+    height: 5rem;
+}
+
+.logorodape{
+    height: 4rem;
+    width: 4rem;
+}
+
+footer a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--white-color);
+
+    font-size: 0.75rem;
+}
+
+@media (width: 1080px) {
+    body{
+        background: red;
+    }
 }
