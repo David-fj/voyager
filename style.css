@@ -2,8 +2,9 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Poppins", sans-serif;
 }
+
+
 
 :root {
     --white-color: #fff;
@@ -12,48 +13,6 @@
     --border-cads: #45BAF2;
     --green-blue-darker: #061E29;
     --cad-main-bk: #115575;
-    --background-planet: url('./src/images/earth-seen-from-space.webp');
-
-    --background-estudo1: url('./src/images/bkest1.webp');
-    --background-estudo2: url('./src/images/bkest2.webp');
-    --background-estudo3: url('./src/images/bkest3.webp');
-    --background-estudo4: url('./src/images/bkest4.webp');
-    --background-estudo5: url('./src/images/bkest5.webp');
-    --background-estudo6: url('./src/images/bkest6.webp');
-}
-
-/*BACKGROUNDS*/
-
-.estudobk{
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)) ,var(--background-estudo1);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.estudobk2{
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--background-estudo2);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.estudobk3{
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--background-estudo3);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.estudobk4{
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--background-estudo4);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.estudobk5{
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--background-estudo5);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.estudobk6{
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--background-estudo6);
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 body{
@@ -126,8 +85,6 @@ header ul li, .cadastro-header a {
     width: 4.9375rem;
     border-bottom: 1px solid var(--nav-color);
     padding: 0.15rem 0;
-    font-weight: 400;
-    font-style: normal;
     align-items: center;
     justify-content: center;
     transition: 300ms;
@@ -142,8 +99,6 @@ header ul li, .cadastro-header a {
     border-radius: 0.5rem;
     width: 11.5rem;
     padding: 0.2rem 0;
-    font-weight: 400;
-    font-style: normal;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -186,12 +141,10 @@ main{
 }
 
 .cad-main h2{
-    font-weight: 700;
     margin-top: 5.625rem;
 }
 
 .cad-main p{
-    font-weight: 100;
     width: 55rem;
     height: auto;
     margin-top: 2rem;
@@ -214,16 +167,6 @@ span{
 .cad-main button:hover{
     background: var(--border-cads);
     color: var(--green-blue-darker);
-}
-
-.planetsec{
-    height: auto;
-    width: 100%;
-    padding-bottom: 10rem;
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--background-planet);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 
@@ -308,8 +251,6 @@ span{
     border: none;
     color: var(--white-color);
     text-align: right;
-    font-weight: 300;
-    font-size: 1.25rem;
     padding: 0.25rem;
     margin-bottom: 1rem;
     cursor: pointer;
@@ -355,12 +296,4 @@ footer a{
     align-items: center;
     text-decoration: none;
     color: var(--white-color);
-
-    font-size: 0.75rem;
-}
-
-@media (width: 1080px) {
-    body{
-        background: red;
-    }
 }

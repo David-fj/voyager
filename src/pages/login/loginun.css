@@ -12,11 +12,10 @@
     --border-cads: #45BAF2;
     --green-blue-darker: #061E29;
     --cad-main-bk: #115575;
-    --background-planet: url('./src/images/earth-seen-from-space.webp');
     --input-bk: #E7EEF1;
     --color-input: #061E29;
 
-    --background-foguete: url('../../images/rocket-flying-through-space.webp');
+    --background-foguete: url('../../images/foguete.webp');
 }
 
 body{
