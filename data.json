@@ -1,0 +1,33 @@
+{
+    "temas": [
+        {
+            "titulo": "Cosmologia",
+            "descricao": "Cosmologia é o estudo da origem, evolução e estrutura do universo, tudo isso é explanado nas aulas."
+        },
+
+        {
+            "titulo": "Sistema Solar",
+            "descricao": "O Sistema Solar é o conjunto de planetas e outros corpos celestes que orbitam o Sol. Vamos conhece-los nessas aulas."
+        },
+
+        {
+            "titulo": "Estrela e Evolução Estrelar",
+            "descricao": "Estrelas nascem, vivem e morrem em ciclos complexos de evolução estelar, hora de acompanhar esse processo"
+        },
+
+        {
+            "titulo": "Estrutura Galática",
+            "descricao": "Galáxias possuem estruturas complexas com braços espirais, núcleos e halos, é essencial estudá-las."
+        },
+
+        {
+            "titulo": "Exoplanetas",
+            "descricao": "Exoplanetas são planetas que orbitam estrelas fora do nosso Sistema Solar, então vamos para mais uma aula."
+        },
+
+        {
+            "titulo": "Instrumentos na Astronomia",
+            "descricao": "Telescópios e sondas espaciais são essenciais para a observação astronômica, mas como é usado?"
+        }
+    ]
+}
