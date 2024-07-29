@@ -44,7 +44,6 @@ button{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
 }
 
 .navList li a {
@@ -95,19 +94,18 @@ header ul li, .cadastro-header a {
 }
 
 .b-cadastro{
-    border: 1px solid var(--border-cads);
-    border-radius: 0.5rem;
-    width: 11.5rem;
-    padding: 0.2rem 0;
+    border-bottom: 1px solid var(--nav-color);
+    width: 8.4rem;
+    padding: 0.15rem 0;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     transition: 300ms;
     margin: 0 1rem 0 0;
 }
 
 .b-cadastro:hover{
-    background: var(--border-cads);
+    border-bottom: 1px solid var(--border-cads);
 }
 
 .cadastro-header a{
