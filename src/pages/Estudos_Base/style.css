@@ -4,8 +4,12 @@
     padding: 0;
     font-family: "Poppins", sans-serif;
     text-decoration: none;
+    color: var(--text-logo-color);
 }
 
+a {
+    color: red;
+}
 
 :root {
     --white-color: #fff;
@@ -13,6 +17,8 @@
     --text-logo-color: #F4F4F4;
     --mint-green: #cdf3f4;
     --border-cads: #45BAF2;
+    --cards: #115575;
+    --color-bk: #141A23;
     --green-blue-darker: #061E29;
     --cad-main-bk: #115575;
 }
@@ -118,4 +124,34 @@ li , ul div li{
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+.home{
+    height: 37.5rem;
+    background: linear-gradient(-90deg, #16204A, #172763, #181834);
+}
+
+.estudos-ref{
+    height: 27rem;
+    width: 22.6rem;
+
+    background: var(--cards);
+    
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.estudos-ref img{
+    height: 11rem;
+    width: 11rem;
+
+    margin-top: 1rem;
+}
+
+.colorbk{
+    background: var(--color-bk);
 }
