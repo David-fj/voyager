@@ -18,6 +18,8 @@
 body{
     height: 100svh;
     color: var(--white-color);
+    background: black;
+    
 }
 
 header{
@@ -147,6 +149,7 @@ main{
     height: auto;
     margin-top: 2rem;
     margin-bottom: 2rem;
+    font-weight: 200;
 }
 
 span{
