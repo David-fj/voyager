@@ -1,12 +1,12 @@
 :root{
     --background-planet: url('../images/terra.jpg');
     
-    --background-estudo1: url('../images/bkest1.webp');
-    --background-estudo2: url('../images/bkest2.webp');
-    --background-estudo3: url('../images/bkest3.webp');
-    --background-estudo4: url('../images/bkest4.webp');
-    --background-estudo5: url('../images/bkest5.webp');
-    --background-estudo6: url('../images/bkest6.webp');
+    --background-estudo1: url('../images/bkest1.png');
+    --background-estudo2: url('../images/bkest2.png');
+    --background-estudo3: url('../images/bkest3.png');
+    --background-estudo4: url('../images/bkest4.png');
+    --background-estudo5: url('../images/bkest5.png');
+    --background-estudo6: url('../images/bkest6.png');
 }
 
 /*BACKGROUNDS*/
