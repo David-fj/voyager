@@ -141,7 +141,7 @@ p {
     color: #262626;
 }
 
-.accordion {
+.tema {
     background-color: #eee;
     color: #444;
     cursor: pointer;
@@ -154,7 +154,7 @@ p {
     transition: 0.4s;
 }
 
-.active, .accordion:hover {
+.active, .tema:hover {
     background-color: #ccc;
 }
 

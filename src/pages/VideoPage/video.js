@@ -1,19 +1,15 @@
-//Oque está aqui é teste, pode ou não ser usado
+//Função pra expandir os temas
+var temaExpandir = document.getElementsByClassName("tema");
+var contadorDeTemas;
 
-var acc = document.getElementsByClassName("accordion");
-var i;
-
-for (i = 0; i < acc.length; i++) {                      //
-    acc[i].addEventListener("click", function() {       //
-        this.classList.toggle("active");                // Sistema
-        var panel = this.nextElementSibling;            // pra
-        if (panel.style.display === "block") {          // expandir
-            panel.style.display = "none";               // o
-        } else {                                        // menu
-            panel.style.display = "block";              // latera
-        }                                               // de aulas
-    });                                                 // e temas
-}                                                       //
-
-
-//Apenas para teste
+for (contadorDeTemas = 0; contadorDeTemas < temaExpandir.length; contadorDeTemas++) {
+    temaExpandir[contadorDeTemas].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var menuExpansivel = this.nextElementSibling;
+        if (menuExpansivel.style.display === "block") {
+            menuExpansivel.style.display = "none";
+        } else {      
+            menuExpansivel.style.display = "block";                  
+        }                                                            
+    });                                                              
+}                                                                   
