@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Voyager">
     <title>Voyager</title>
-    <link fetchpriority="high" rel="stylesheet" href="./login.css" media="all">
+    <link fetchpriority="high" rel="stylesheet" href="./login.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,22 +20,27 @@
         <h1>Voyager</h1>
     </a>
 
-    <h3>Acesse a sua conta</h3>
+    <h3>Cadastre-se Gratuitamente</h3>
 
     <form action="">
+        <label for="nome">Nome Completo</label>
+        <input type="text" name="" id="nome" placeholder="Seu nome completo">
+
         <label for="email">E-mail</label>
-        <input type="email" name="" id="email" placeholder="Seu e-mail" required>
+        <input type="email" name="" id="email" placeholder="Seu e-mail">
 
         <label for="senha">Senha</label>
-        <input type="password" id="senha" placeholder="Sua senha" required>
+        <input type="password" id="senha" placeholder="Deve ter no mínimo 7 caracteres">
 
-        <a href="">Esqueceu a senha? Clique aqui!</a>
+        <label for="consenha">Confirme a sua senha</label>
+        <input type="password" name="" id="consenha" placeholder="Deve ter no mínimo 7 caracteres">
 
-        <button>Entrar</button>
+        <button>Seguir</button>
     </form>
 
+    <p>Ao se cadastrar, você aceita nossos <span>termos de uso</span> e a nossa <span>política de privacidade</span>.</p>
     <hr>
-    <a href="../#" class="conta">Não tem uma conta? Cadastre-se!</a>
+    <a href="../#" class="conta">Já tem uma conta? Entre!</a>
 </main>
 </body>
 </html>

@@ -20,6 +20,10 @@
     --cad-main-bk: #115575;
 }
 
+body{
+    height: 100svh;
+}
+
 header{
     height: 6.0625rem;
 }

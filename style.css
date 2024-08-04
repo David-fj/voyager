@@ -16,19 +16,18 @@
 }
 
 body{
-    height: 100svh;
     color: var(--white-color);
     background: black;
-    display: flex;justify-content: center;
     
-}
-
-#content{
-    max-width: 1920px;
 }
 
 header{
     height: 6.0625rem;
+    background: var(--nav-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 nav{
@@ -36,10 +35,11 @@ nav{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background: var(--nav-color);
     width: 100%;
     height: 6.0625rem;
     padding: 1rem;
+
+    max-width: 1920px;
 }
 
 button{
@@ -137,12 +137,22 @@ main{
 
 .cad-main{
     background: var(--cad-main-bk);
+    width: 100%;
     height: auto;
+    display: flex;
+    padding-bottom: 2rem;
+    justify-content: center;
+}
+
+.color-aling{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding-left: 4rem;
     color: var(--text-logo-color);
     text-align: justify;
-    padding-left: 4rem;
-    padding-bottom: 2rem;
-    min-width: 1920px;
+    width: 100%;
+    max-width: 1920px;
 }
 
 .cad-main h2{
@@ -189,7 +199,13 @@ span{
     align-items: center;
     gap: 5rem;
     width: 100%;
+}
 
+.planetsec .color-aling-planet{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1920px;
 }
 
 .planetsec ul .first, .planetsec ul .second{
