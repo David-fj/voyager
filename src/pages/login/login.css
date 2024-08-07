@@ -24,6 +24,15 @@ body{
     display: flex;
     justify-content: center;
     
+    height: 100%;
+}
+
+#container{
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .logo{
@@ -41,23 +50,22 @@ body{
 }
 
 .img{
-    width: 90%;
-    height: auto;
-    display: flex;
-
+    width: 100%;
     background-image: var(--background-foguete);
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: scroll;
+    background-position: center;
 }
 
 main{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     background: linear-gradient(to right, #01050B, #202B54);
     border-left: 2px solid black;
+    padding: 2rem;
+    height: 100vh;
+    overflow: auto;
 }
 
 main h3{
@@ -103,7 +111,6 @@ main form button{
 
 p{
     text-align: justify;
-    padding: 0 4rem 0 4rem;
     margin-bottom: 2.375rem;
 }
 
@@ -134,22 +141,4 @@ span{
     text-align: center;
 
     margin-bottom: 2.8125rem;
-}
-
-@media (min-width: 1100px) {
-    body{
-    height: 100svh;
-    }
-
-    .img{
-        width: 90%;
-        height: auto;
-    
-        background-image: var(--background-foguete);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed scroll;
-    }
-    
 }

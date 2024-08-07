@@ -3,41 +3,47 @@
         "titulo": "Cosmologia",
         "descricao": "Cosmologia é o estudo da origem, evolução e estrutura do universo, tudo isso é explanado nas aulas.",
         "icone": "../../images/rocket-svgrepo-com.svg",
-        "iconedescricao": "Icone Cosmologia"
+        "iconedescricao": "Icone Cosmologia",
+        "dtalteracao": "06/08/2024"
     },
 
     {
         "titulo": "Sistema Solar",
         "descricao": "O Sistema Solar é o conjunto de planetas e outros corpos celestes que orbitam o Sol. Vamos conhece-los nessas aulas.",
         "icone": "../../images/space-signal-svgrepo-com.svg",
-        "iconedescricao": "Icone Sistema Solar"
+        "iconedescricao": "Icone Sistema Solar",
+        "dtalteracao": "06/08/2024"
     },
 
     {
         "titulo": "Estrela e Evolução Estrelar",
         "descricao": "Estrelas nascem, vivem e morrem em ciclos complexos de evolução estelar, hora de acompanhar esse processo",
         "icone": "../../images/star-rings-svgrepo-com.svg",
-        "iconedescricao": "Icone Estrela e Evolução Estrelar"
+        "iconedescricao": "Icone Estrela e Evolução Estrelar",
+        "dtalteracao": "06/08/2024"
     },
 
     {
         "titulo": "Estrutura Galática",
         "descricao": "Galáxias possuem estruturas complexas com braços espirais, núcleos e halos, é essencial estudá-las.",
         "icone": "../../images/galaxy-svgrepo-com.svg",
-        "iconedescricao": "Icone Estrutura Galática"
+        "iconedescricao": "Icone Estrutura Galática",
+        "dtalteracao": "06/08/2024"
     },
 
     {
         "titulo": "Exoplanetas",
         "descricao": "Exoplanetas são planetas que orbitam estrelas fora do nosso Sistema Solar, então vamos para mais uma aula.",
         "icone": "../../images/planet-4-svgrepo-com.svg",
-        "iconedescricao": "Icone Exoplanetas"
+        "iconedescricao": "Icone Exoplanetas",
+        "dtalteracao": "06/08/2024"
     },
 
     {
         "titulo": "Instrumentos na Astronomia",
         "descricao": "Telescópios e sondas espaciais são essenciais para a observação astronômica, mas como é usado?",
         "icone": "../../images/telescope-svgrepo-com.svg",
-        "iconedescricao": "Icone Instrumentos na Astronomia"
+        "iconedescricao": "Icone Instrumentos na Astronomia",
+        "dtalteracao": "06/08/2024"
     }
 ]

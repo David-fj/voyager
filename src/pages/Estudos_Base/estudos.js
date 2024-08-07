@@ -1,4 +1,4 @@
-function BuscarOsTemas() {
+function buscarOsTemas() {
     fetch('data.json')          //Buscar o .json
         .then(response => response.json())          // se achar o .json pega a resposta
         .then(data => {         //se a resposta for data (porque não vai vim data.json e sim data) ele segue
@@ -33,4 +33,4 @@ function BuscarOsTemas() {
 
 }
 
-BuscarOsTemas()
+buscarOsTemas()
