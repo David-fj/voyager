@@ -50,7 +50,7 @@ body{
 }
 
 .img{
-    width: 100%;
+    flex: 1 1 0%;
     background-image: var(--background-foguete);
     background-repeat: no-repeat;
     background-size: cover;
@@ -58,15 +58,18 @@ body{
 }
 
 main{
+    padding: 5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     background: linear-gradient(to right, #01050B, #202B54);
     border-left: 2px solid black;
-    padding: 2rem;
-    height: 100vh;
+    
     overflow: auto;
+    height: 100dvh;
+    width: 35 rem;
 }
+
 
 main h3{
     margin-bottom: 2.6125rem;
@@ -81,7 +84,6 @@ main form{
 }
 
 main form input{
-    width: 27.5rem;
     padding: 0.5rem;
     border: none;
     border-radius: 0.5rem;
@@ -101,7 +103,6 @@ main form label{
 main form button{
     margin-top: 1rem;
     margin-bottom: 1.5625rem;
-    width: 27.5rem;
     padding: 0.75rem;
     border: none;
     border-radius: 0.5rem;
@@ -132,13 +133,10 @@ span{
 }
 
 .conta{
-    width: 27.5rem;
     padding: 1.375rem 0 1.375rem 0;
     border-radius: 0.5rem;
     background: var(--nav-color);
     color: var(--white-color);
     font-weight: 100;
     text-align: center;
-
-    margin-bottom: 2.8125rem;
 }

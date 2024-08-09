@@ -17,7 +17,6 @@
     --cards: #115575;
     --color-bk: #141A23;
     --green-blue-darker: #061E29;
-    --cad-main-bk: #115575;
 }
 
 header{
@@ -42,8 +41,8 @@ button{
 .navList {
     width: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 }
 
 .navList li a {
@@ -65,7 +64,7 @@ button{
 }
 
 .cadastro-header{
-    width: 20rem;
+    gap: 5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -79,58 +78,98 @@ header ul li, .cadastro-header a {
     color: var(--text-logo-color);
 }
 
-.entrar{
-    display: flex;
-    width: 4.9375rem;
-    border-bottom: 1px solid var(--nav-color);
-    padding: 0.15rem 0;
-    align-items: center;
-    justify-content: center;
-    transition: 300ms;
-}
-
-.entrar:hover{
-    border-bottom: 1px solid var(--border-cads);
-}
-
-.b-cadastro{
-    border-bottom: 1px solid var(--nav-color);
-    width: 8.4rem;
-    padding: 0.15rem 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 300ms;
-    margin: 0 1rem 0 0;
-}
-
-.b-cadastro:hover{
-    border-bottom: 1px solid var(--border-cads);
-}
-
 .cadastro-header a{
     text-decoration: none;
+    
+    gap: 2rem;
 }
 
 .cadastro-header a img{
-    margin-left: 0.75rem;
+    height: 1.75rem;
+    width: 1.75rem;
+}
+
+.cadastro-header img svg:hover{
+    fill: var(--border-cads);
+}
+
+main{
+    background: linear-gradient(#115575, #092C3D);
 }
 
 .titulo {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 0 10rem 0 10rem;
+    text-align: justify;
 }
+
 
 h2 {
-    color: black;
+    color: var(--white-color);
+    margin-bottom: 2rem;
 }
 
-.cards img {
+.equipe{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.cards-one img,
+.cards-two img{
     width: 10rem;
     height: 10rem;
-    border-radius: 100%;
+    border-radius: 2rem;
 }
 
-.cards div h4, p{
-    color:#262626;
+.cards-one,
+.cards-two{
+    display: flex;
+    flex-direction: row;
+    gap: 20rem;
+    margin-bottom: 5rem;
+}
+
+.cards-one div,
+.cards-two div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cards-one h4,
+.cards-two h4{
+    margin-top: 1rem;
+    
+    color: var(--white-color);
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+    height: 10rem;
+
+    background: var(--nav-color);
+}
+
+footer div{
+    border: 1px solid var(--white-color);
+    height: 5rem;
+}
+
+.logorodape{
+    height: 4rem;
+    width: 4rem;
+}
+
+footer a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--white-color);
 }
