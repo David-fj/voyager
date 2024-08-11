@@ -1,0 +1,218 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    color: var(--text-logo-color);
+}
+
+
+:root {
+    --white-color: #fff;
+    --nav-color: #262626;
+    --text-logo-color: #F4F4F4;
+    --mint-green: #cdf3f4;
+    --border-cads: #45BAF2;
+    --cards: #115575;
+    --color-bk: #141A23;
+    --green-blue-darker: #061E29;
+}
+
+/* HEADER */
+
+header{
+    height: 6.0625rem;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--nav-color);
+    width: 100%;
+    height: 6.0625rem;
+    padding: 1rem;
+}
+
+button{
+    cursor: pointer;
+}
+
+.navList {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navList li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-logo-color);
+    text-decoration: none;
+}
+
+.logo{
+    height: 5rem;
+    width: 5rem;
+}
+
+.image-header{
+    height: 1.25rem;
+    width: 1.25rem;
+}
+
+.cadastro-header{
+    gap: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header ul li, .cadastro-header a {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    
+    color: var(--text-logo-color);
+}
+
+.cadastro-header a{
+    text-decoration: none;
+    
+    gap: 2rem;
+}
+
+.cadastro-header a img{
+    height: 1.75rem;
+    width: 1.75rem;
+}
+
+.cadastro-header img svg:hover{
+    fill: var(--border-cads);
+}
+
+/* MAIN */
+
+body {
+    height: 100vh;
+}
+
+.catalogoContainer {
+    width: 100%;
+    height: 48rem;
+    background-image:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.207), rgba(0, 0, 0, 0.695)),
+    url(../../images/portrait-astronaut-space-suit-doing-common-activity-outdoors-min.webp);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 5rem 40rem 0 3rem;
+}
+
+.catalogoContainer h1 {
+    font-size: 2.5rem;
+}
+
+.catalogoContainer span {
+    font-size: 4.9375rem;
+    color: var(--border-cads);
+}
+
+.catalogoContainer p {
+    margin: 2rem 0;
+    font-size: 1.25rem;
+    letter-spacing: 0.05rem;
+    font-weight: 200;
+}
+
+
+.temasContainer {
+    background: #06090D;
+    width: 100%;
+}
+
+/* Cards */
+
+#temas {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 22.625rem 22.625rem;
+    grid-template-rows: auto;
+    grid-gap: 5rem 16.375rem;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 0 10rem 0;
+}
+
+.aling-estudo {
+    display: flex;
+    align-self: center;
+    gap: 16.375rem;
+  }
+  
+.estudos-ref {
+    height: 25rem;
+    width: 22.6rem;
+  
+    background: var(--cards);
+  
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 1rem;
+}
+
+.estudos-ref img {
+    height: 11rem;
+    width: 11rem;
+  
+    margin-top: 1rem;
+}
+
+.colorbk {
+    background: var(--color-bk);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    gap: 1rem;
+  
+    border-radius: 0 0 1rem 1rem;
+}
+
+/* FOOTER */
+
+footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+    height: 10rem;
+
+    background: var(--nav-color);
+}
+
+footer div{
+    border: 1px solid var(--white-color);
+    height: 5rem;
+}
+
+.logorodape{
+    height: 4rem;
+    width: 4rem;
+}
+
+footer a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--white-color);
+}

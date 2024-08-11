@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Voyager">
     <title>Voyager</title>
-    <link fetchpriority="high" rel="stylesheet" href="./src/styles/font-style.css" media="all">
-    <link fetchpriority="high" rel="stylesheet" href="./src/styles/background-styles.css" media="all">
-    <link rel="stylesheet" href="style.css" media="all">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,13 +24,13 @@
                 </li>
                 <li class="cadastro-header">
                     <div class="entrar">
-                        <a href="./src/pages/login/login.html">
+                        <a href="">
                             Entrar
                            <img src="./src/images/login-svgrepo-com.svg" alt="" class="image-header">
                         </a>
                     </div>
                     <div class="b-cadastro">
-                        <a href="./src/pages/login/login.html">
+                        <a href="">
                             Cadastre-se
                             <img src="./src/images/arrow-next-small-svgrepo-com.svg" alt="" class="image-header">
                         </a>
@@ -43,110 +41,65 @@
     </header>
     <main>
         <section class="cad-main">
-            <div class="color-aling">
             <h2>Domine a <span>Astronomia</span> e Alcance <br> o <span>Topo do Ranking!</span></h2>
             
-            <p>Bem-vindo ao nosso site! Aqui, você encontrará um ambiente único onde aprendizado e diversão se encontram. Nosso diferencial é um emocionante jogo onde você pode logar, competir e subir no pódio, desafiando seus conhecimentos e habilidades. Além disso, oferecemos aulas totalmente gratuitas, permitindo que você aprenda no seu próprio ritmo sem qualquer custo. Junte-se a nós e descubra uma nova maneira de aprender e se divertir!</p>
+            <p>Explore o fascinante mundo da astronomia em uma plataforma gratuita e inovadora. Assista a vídeos incríveis, confira resumos rápidos e teste seus conhecimentos com desafios divertidos. Junte-se à nossa comunidade, ganhe pontos, suba no ranking e mostre que você é um verdadeiro astro!</p>
 
-            <a href="./src/pages/login/login.html"><button>Cadastre-se</button></a>
-        </div>
+            <button class="cadastre">Cadastre-se</button>
         </section>
-        <section class="planetsec">
-            <div class="color-aling-planet">
-            <h2>Conheça um pouco mais <br>sobre <span>Astronomia.</span> É só clicar!</h2>
-            <ul>
+        <section>
+            <h2>Conheça um pouco mais sobre <span>Astronomia</span></h2>
 
-                <div class="first">
-                <li class="estudobk">
+            <ul>
+                <li>
                     <a href="./src/pages/Estudos_Base/index.html" onclick="a()">
-                        <div>
-                        <img src="./src/images/planeta-lua.svg" alt="Planeta Icon">
+                        <i></i>
                         <h3>Cosmologia</h3>
-                    </div>
                         <p>Estudo da origem, evolução e estrutura do universo como um todo.</p>
                     </a>
                 </li>
-                <li class="estudobk2">
-                    <a href="#">
-                        <div>
-                        <img src="./src/images/planeta-lua.svg" alt="Planeta Icon">
-                        <h3>Sistema Solar</h3>
-                    </div>
-                        <p>Estudo dos corpos celestes que orbitam o Sol.</p>
-                    </a>
+                <li>
+                    <i></i>
+                    <h3>Sistema solar</h3>
+                    <p>Estudo dos corpos celestes que orbitam o Sol.</p>
                 </li>
-                <li class="estudobk3">
-                    <a href="#">
-                        <div>
-                        <img src="./src/images/planeta-lua.svg" alt="Planeta Icon">
-                        <h3>Estrelas e Evolução Estelar</h3>
-                    </div>
-                        <p>Análise da formação, vida e morte das estrelas.</p>
-                    </a>
+                <li>
+                    <i></i>
+                    <h3>Estrelas e Evolução Estelar</h3>
+                    <p>Análise da formação, vida e morte das estrelas.</p>
                 </li>
-                
-            </div>
-            <div class="second">
-                <li class="estudobk4">
-                    <a href="">
-                    <div>
-                        <img src="./src/images/planeta-lua.svg" alt="Planeta Icon">
+                <li>
+                    <i></i>
                     <h3>Galáxias e Estrutura Galáctica</h3>
-                    </div>
                     <p>Estudo das galáxias, sua formação, estrutura e interação.</p>
-                </a>
                 </li>
-                <li class="estudobk5">
-                    <a href="">
-                        <div>
-                        <img src="./src/images/planeta-lua.svg" alt="Planeta Icon">
+                <li>
+                    <i></i>
                     <h3>Exoplanetas</h3>
-                    </div>
                     <p>Investigação de planetas fora do nosso Sistema Solar.</p>
-                </a>
                 </li>
-                <li class="estudobk6">
-                    <a href="">
-                        <div>
-                        <img src="./src/images/planeta-lua.svg" alt="Planeta Icon">
+                <li>
+                    <i></i>
                     <h3>Instrumentação Astronômica</h3>
-                    </div>
                     <p>Técnicas e tecnologias usadas para observar o universo.</p>
-                </a>
                 </li>
-            </div>
             </ul>
-        </div>
         </section>
-        <section class="perguntas">
+        <section>
             <h2>Perguntas frequentes sobre o conteúdo</h2>
-            <div>
-                <button>
-                    <img src="./src/images/seta.svg" alt="seta">
-                    O que eu posso aprender?
-                </button>
-                <button>
-                    <img src="./src/images/seta.svg" alt="seta">
-                    Os conteúdos são confiaveis?
-                </button>
-                <button>
-                    <img src="./src/images/seta.svg" alt="seta">
-                    A plataforma é paga?
-                </button>
-                <button>
-                    <img src="./src/images/seta.svg" alt="seta">
-                    Como tenho acesso a todo conteúdo?
-                </button>
-            </div>
+            <ul>
+                <li>
+                    <i></i>
+                    <p></p>
+                </li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
         </section>
     </main>
     <footer>
-        <p>Edutec - Astronomia</p>
-        <div></div>
-        <a href="./index.html">
-            <img src="./src/images/logo.svg" alt="" class="logo logorodape">
-            <h1>Voyager</h1>
-        </a>
+
     </footer>
 </body>
 </html>
