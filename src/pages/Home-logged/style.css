@@ -46,8 +46,8 @@ button {
 .navList {
   width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .navList li a {
@@ -69,7 +69,7 @@ button {
 }
 
 .cadastro-header {
-  width: 20rem;
+  gap: 5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -86,10 +86,21 @@ header ul li,
 
 .cadastro-header a {
   text-decoration: none;
+
+  gap: 2rem;
 }
 
 .cadastro-header a img {
-  margin-left: 0.75rem;
+  height: 1.75rem;
+  width: 1.75rem;
+}
+
+.cadastro-header img svg:hover {
+  fill: var(--border-cads);
+}
+
+span {
+  color: var(--border-cads);
 }
 
 li,
@@ -98,6 +109,7 @@ ul div li {
   flex-direction: row;
   align-items: center;
 }
+/*HOME*/
 
 .home {
   display: flex;
@@ -106,10 +118,17 @@ ul div li {
   padding: 1rem;
 }
 
+.home h1,
+.home h2 {
+  margin-top: 1rem;
+}
+
 .aling-estudo {
   display: flex;
   align-self: center;
   gap: 16.375rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .estudos-ref {
@@ -145,8 +164,72 @@ ul div li {
   border-radius: 0 0 1rem 1rem;
 }
 
+/*PÓDIO*/
+
 .podio {
   background: var(--podio-background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16.375rem;
+
+  height: 36rem;
+}
+
+.podio .pod-mundial,
+.podio .pod-atual {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 32rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: var(--color-bk);
+}
+
+.podio table {
+  display: block;
+  border-collapse: collapse;
+  letter-spacing: 2px;
+  height: 20rem;
+  max-height: 20rem;
+  text-align: left;
+  overflow-y: auto;
+}
+
+.podio caption {
+  font-weight: bold;
+  padding-bottom: 1rem;
+}
+
+.podio table thead th {
+  border-collapse: collapse;
+  width: 100%;
+  padding-right: 1rem;
+}
+
+.podio table thead th:first-child {
+  width: 6rem;
+}
+
+.podio table tbody td {
+  height: 2rem;
+}
+
+.podio table thead th:last-child {
+  width: 8rem;
+}
+
+.podio table td:first-child {
+  text-align: center;
+}
+
+.podio table td:last-child {
+  text-align: right;
+}
+
+.podio table tbody > tr:nth-of-type(even) {
+  background-color: var(--green-blue-darker);
 }
 
 /*FOOTER*/
