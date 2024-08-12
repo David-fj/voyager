@@ -1,178 +1,244 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: "Poppins", sans-serif;
-    text-decoration: none;
-    color: var(--text-logo-color);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  color: var(--text-logo-color);
 }
-
 
 :root {
-    --white-color: #fff;
-    --nav-color: #262626;
-    --text-logo-color: #F4F4F4;
-    --mint-green: #cdf3f4;
-    --border-cads: #45BAF2;
-    --cards: #115575;
-    --color-bk: #141A23;
-    --green-blue-darker: #061E29;
-    --cad-main-bk: #115575;
+  --white-color: #fff;
+  --nav-color: #262626;
+  --text-logo-color: #f4f4f4;
+  --mint-green: #cdf3f4;
+  --border-cads: #45baf2;
+  --cards: #115575;
+  --color-bk: #141a23;
+  --green-blue-darker: #061e29;
+  --cad-main-bk: #115575;
 }
 
-header{
-    height: 6.0625rem;
+header {
+  height: 6.0625rem;
 }
 
-nav{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--nav-color);
-    width: 100%;
-    height: 6.0625rem;
-    padding: 1rem;
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--nav-color);
+  width: 100%;
+  height: 6.0625rem;
+  padding: 1rem;
 }
 
-button{
-    cursor: pointer;
+button {
+  cursor: pointer;
 }
 
 .navList {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navList li a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--text-logo-color);
-    text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-logo-color);
+  text-decoration: none;
 }
 
-.logo{
-    height: 5rem;
-    width: 5rem;
+.logo {
+  height: 5rem;
+  width: 5rem;
 }
 
-.image-header{
-    height: 1.25rem;
-    width: 1.25rem;
+.image-header {
+  height: 1.25rem;
+  width: 1.25rem;
 }
 
-.cadastro-header{
-    width: 20rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.cadastro-header {
+  width: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-header ul li, .cadastro-header a {
-    display: flex;
-    align-items: center;
-    background: transparent;
-    
-    color: var(--text-logo-color);
+header ul li,
+.cadastro-header a {
+  display: flex;
+  align-items: center;
+  background: transparent;
+
+  color: var(--text-logo-color);
 }
 
-.entrar{
-    display: flex;
-    width: 4.9375rem;
-    border-bottom: 1px solid var(--nav-color);
-    padding: 0.15rem 0;
-    align-items: center;
-    justify-content: center;
-    transition: 300ms;
+.entrar {
+  display: flex;
+  width: 4.9375rem;
+  border-bottom: 1px solid var(--nav-color);
+  padding: 0.15rem 0;
+  align-items: center;
+  justify-content: center;
+  transition: 300ms;
 }
 
-.entrar:hover{
-    border-bottom: 1px solid var(--border-cads);
+.entrar:hover {
+  border-bottom: 1px solid var(--border-cads);
 }
 
-.b-cadastro{
-    border-bottom: 1px solid var(--nav-color);
-    width: 8.4rem;
-    padding: 0.15rem 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 300ms;
-    margin: 0 1rem 0 0;
+.b-cadastro {
+  border-bottom: 1px solid var(--nav-color);
+  width: 8.4rem;
+  padding: 0.15rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 300ms;
+  margin: 0 1rem 0 0;
 }
 
-.b-cadastro:hover{
-    border-bottom: 1px solid var(--border-cads);
+.b-cadastro:hover {
+  border-bottom: 1px solid var(--border-cads);
 }
 
-.cadastro-header a{
-    text-decoration: none;
+.cadastro-header a {
+  text-decoration: none;
 }
 
-.cadastro-header a img{
-    margin-left: 0.75rem;
+.cadastro-header a img {
+  margin-left: 0.75rem;
 }
 
-li , ul div li{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+li,
+ul div li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
+/*VIDEO*/
 
-#tituloVideo {
-    color: black;
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 5px 10px;
-    border-radius: 5px;
+#videoAula {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background: var(--green-blue-darker);
+  color: var(--mint-green);
 }
 
-/* Tudo a Baixo é Teste*/
+#videoAula .videozao {
+  width: 75rem;
+}
 
+#videoExibicao {
+  display: flex;
+  height: 35.125rem;
+  width: 100%;
+}
+
+aside {
+  width: 20rem;
+  height: 100%;
+  position: fixed;
+  left: 75rem;
+
+  overflow: auto;
+}
+
+span {
+  color: var(--border-cads);
+}
 
 h2 {
-    color: #262626;
-}
-
-p {
-    color: #262626;
+  color: var(--text-logo-color);
 }
 
 .tema {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-    transition: 0.4s;
+  border: 1px;
+  color: var(--text-logo-color);
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
 }
 
-.active, .tema:hover {
-    background-color: #ccc;
+.active,
+.tema:hover {
+  background-color: #ccc;
 }
 
 .panel {
-    padding: 0 18px;
-    display: none;
-    background-color: var(--color-bk);
-    overflow: hidden;
+  padding: 0 18px;
+  display: none;
+  background-color: var(--color-bk);
+  overflow: hidden;
 }
 
 .video-list {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 .video-list li {
-    padding: 10px 0;
+  padding: 10px 0;
 }
 
+#aulasOutroTema {
+  width: 100%;
+}
+
+.resumo {
+  padding: 2rem;
+}
+
+.aulas {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 1rem;
+  border-left: var(--nav-color);
+}
+
+/*FOOTER*/
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10rem;
+  height: 10rem;
+
+  background: var(--green-blue-darker);
+}
+
+.footer div {
+  border: 1px solid var(--white-color);
+  height: 5rem;
+}
+
+.logorodape {
+  height: 4rem;
+  width: 4rem;
+}
+
+.footer a,
+.footer p {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--white-color);
+}
 
 /*Provisorio pode ou não ser usado*/
