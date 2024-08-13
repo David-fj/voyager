@@ -15,15 +15,16 @@
   --border-cads: #45baf2;
   --cards: #115575;
   --color-bk: #141a23;
-  --green-blue-darker: #061e29;
-  --cad-main-bk: #115575;
+  --green-blue-darker: #06090D;
+  --green-blue: #061e29;
+  --light-blue: #649FED;
 }
 
-header {
+header{
   height: 6.0625rem;
 }
 
-nav {
+nav{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -34,15 +35,15 @@ nav {
   padding: 1rem;
 }
 
-button {
+button{
   cursor: pointer;
 }
 
 .navList {
   width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .navList li a {
@@ -53,76 +54,45 @@ button {
   text-decoration: none;
 }
 
-.logo {
+.logo{
   height: 5rem;
   width: 5rem;
 }
 
-.image-header {
+.image-header{
   height: 1.25rem;
   width: 1.25rem;
 }
 
-.cadastro-header {
-  width: 20rem;
+.cadastro-header{
+  gap: 5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-header ul li,
-.cadastro-header a {
+header ul li, .cadastro-header a {
   display: flex;
   align-items: center;
   background: transparent;
-
+  
   color: var(--text-logo-color);
 }
 
-.entrar {
-  display: flex;
-  width: 4.9375rem;
-  border-bottom: 1px solid var(--nav-color);
-  padding: 0.15rem 0;
-  align-items: center;
-  justify-content: center;
-  transition: 300ms;
-}
-
-.entrar:hover {
-  border-bottom: 1px solid var(--border-cads);
-}
-
-.b-cadastro {
-  border-bottom: 1px solid var(--nav-color);
-  width: 8.4rem;
-  padding: 0.15rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 300ms;
-  margin: 0 1rem 0 0;
-}
-
-.b-cadastro:hover {
-  border-bottom: 1px solid var(--border-cads);
-}
-
-.cadastro-header a {
+.cadastro-header a{
   text-decoration: none;
+  
+  gap: 2rem;
 }
 
-.cadastro-header a img {
-  margin-left: 0.75rem;
+.cadastro-header a img{
+  height: 1.75rem;
+  width: 1.75rem;
 }
 
-li,
-ul div li {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+.cadastro-header img svg:hover{
+  fill: var(--border-cads);
 }
-
 /*VIDEO*/
 
 #videoAula {
@@ -134,7 +104,7 @@ ul div li {
 }
 
 #videoAula .videozao {
-  width: 75rem;
+  width: 80%;
 }
 
 #videoExibicao {
@@ -143,11 +113,16 @@ ul div li {
   width: 100%;
 }
 
+#tituloVideo{
+  padding: 0.5rem 0 0 0.5rem;
+}
+
 aside {
-  width: 20rem;
-  height: 100%;
+  width: 20%;
+  height: 100svh;
   position: fixed;
-  left: 75rem;
+  left: 80%;
+  border-left: 2px solid var(--green-blue);
 
   overflow: auto;
 }
@@ -175,7 +150,7 @@ h2 {
 
 .active,
 .tema:hover {
-  background-color: #ccc;
+  background-color: var(--light-blue);
 }
 
 .panel {
