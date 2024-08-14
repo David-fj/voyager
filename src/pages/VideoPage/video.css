@@ -95,7 +95,7 @@ header ul li, .cadastro-header a {
 }
 /*VIDEO*/
 
-#videoAula {
+.videoAula {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -103,7 +103,7 @@ header ul li, .cadastro-header a {
   color: var(--mint-green);
 }
 
-#videoAula .videozao {
+.videoAula .videozao {
   width: 80%;
 }
 
@@ -113,8 +113,10 @@ header ul li, .cadastro-header a {
   width: 100%;
 }
 
-#tituloVideo{
+.tituloVideo{
   padding: 0.5rem 0 0 0.5rem;
+  position: absolute;
+  padding: 1rem;
 }
 
 aside {
@@ -123,8 +125,7 @@ aside {
   position: fixed;
   left: 80%;
   border-left: 2px solid var(--green-blue);
-  
-  top: 6.0625rem;
+
   overflow: auto;
 }
 
@@ -175,7 +176,12 @@ h2 {
 }
 
 .resumo {
-  padding: 2rem;
+  padding: 3rem 10rem;
+  text-align: justify;
+}
+
+.resumo h2{
+  margin-bottom: 3rem;
 }
 
 .aulas {
@@ -217,4 +223,4 @@ h2 {
   color: var(--white-color);
 }
 
-/*Provisorio pode ou não ser usado*/
+/*Provisorio pode ou nÃ£o ser usado*/
