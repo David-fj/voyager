@@ -123,7 +123,8 @@ aside {
   position: fixed;
   left: 80%;
   border-left: 2px solid var(--green-blue);
-
+  
+  top: 6.0625rem;
   overflow: auto;
 }
 
