@@ -77,6 +77,7 @@ main{
 .aling-box{
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding-bottom: 3rem;
 }
 
@@ -89,6 +90,7 @@ main h3{
 main form{
     display: flex;
     flex-direction: column;
+    width: 100%;
     gap: 1rem;
 }
 
@@ -141,7 +143,8 @@ span{
     color: var(--border-cads);
 }
 
-.conta{
+.conta,
+.conta1{
     padding: 1.375rem 0 1.375rem 0;
     border-radius: 0.5rem;
     background: var(--nav-color);
@@ -149,4 +152,24 @@ span{
     font-weight: 100;
     text-align: center;
     width: 100%;
+}
+
+.entrar{
+    display: block;
+}
+
+.entrar hr {
+    margin: 2.375rem;
+}
+
+.entrar form input{
+    margin-bottom: 2rem;
+}
+
+.entrar .conta1{
+    margin-top: 1.5625rem;
+}
+
+.login{
+    display: none;
 }
