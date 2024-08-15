@@ -7,6 +7,11 @@
   color: var(--text-logo-color);
 }
 
+body{
+  height: 100%;
+  background: var(--green-blue-darker);
+}
+
 :root {
   --white-color: #fff;
   --nav-color: #262626;
@@ -81,17 +86,19 @@ header ul li, .cadastro-header a {
 
 .cadastro-header a{
   text-decoration: none;
-  
   gap: 2rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  transition: 0.3s;
+}
+
+.cadastro-header a:hover{
+  background: var(--border-cads);
 }
 
 .cadastro-header a img{
   height: 1.75rem;
   width: 1.75rem;
-}
-
-.cadastro-header img svg:hover{
-  fill: var(--border-cads);
 }
 /*VIDEO*/
 
@@ -105,6 +112,7 @@ header ul li, .cadastro-header a {
 
 .videoAula .videozao {
   width: 80%;
+  border-right: 2px solid var(--green-blue);
 }
 
 #videoExibicao {
@@ -124,7 +132,7 @@ aside {
   height: 100svh;
   position: fixed;
   left: 80%;
-  border-left: 2px solid var(--green-blue);
+
 
   overflow: auto;
   transition: 0.3s;
@@ -188,7 +196,8 @@ h2 {
 .aulas {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 3rem;
   padding: 1rem;
   border-left: var(--nav-color);
 }
