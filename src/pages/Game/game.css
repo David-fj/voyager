@@ -1,0 +1,163 @@
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+font-family: "Poppins", sans-serif;
+text-decoration: none;
+color: var(--text-logo-color);
+}
+  
+:root {
+--white-color: #fff;
+--nav-color: #262626;
+--text-logo-color: #f4f4f4;
+--mint-green: #cdf3f4;
+--border-cads: #45baf2;
+--cards: #115575;
+--color-bk: #141a23;
+--green-blue-darker: #061e29;
+--cad-main-bk: #115575;
+--podio-background: #06090d;
+--light-active: #B5CAD4;
+--menu-color: rgb(0, 0, 0, 74%);
+--background-padrao: #585858;
+--background-game: #D9D9D9;
+--borda-sla: #061e29;
+}
+
+body {
+    height: 100svh;
+    background-color: var(--podio-background);
+}
+  
+header {
+height: 6.0625rem;
+}
+  
+nav {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+background: var(--nav-color);
+width: 100%;
+height: 6.0625rem;
+padding: 1rem;
+}
+  
+button {
+    cursor: pointer;
+    border: none;
+    color: var(--light-active);
+    background: none;
+}
+
+button img {
+    width: 2.25rem;
+}
+  
+.navList {
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+  
+.navList li a {
+display: flex;
+justify-content: center;
+align-items: center;
+color: var(--text-logo-color);
+text-decoration: none;
+}
+  
+.logo {
+height: 5rem;
+width: 5rem;
+}
+  
+ .image-header {
+height: 1.25rem;
+width: 1.25rem;
+}
+  
+.cadastro-header {
+gap: 5rem;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+  
+header ul li,
+.cadastro-header a {
+display: flex;
+align-items: center;
+background: transparent;
+  
+color: var(--text-logo-color);
+}
+  
+.cadastro-header a {
+text-decoration: none;
+  
+gap: 2rem;
+}
+
+.cadastro-header a img {
+height: 1.75rem;
+width: 1.75rem;
+}
+  
+.cadastro-header img svg:hover {
+fill: var(--border-cads);
+}
+  
+span {
+color: var(--border-cads);
+}
+  
+li,
+ul div li {
+display: flex;
+flex-direction: row;
+align-items: center;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}   
+
+/*Da Pagina*/
+
+.gameCase{
+    background-color: var(--borda-sla);
+    width: 78.625rem;
+    height: 48.5rem;
+    position: relative;
+    margin-top: 4.625rem;
+    margin-bottom: 4.625rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gameMenu {
+    background-color: var(--menu-color);
+    width: 100%;
+    height: 4.813rem;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.gameMenu button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
