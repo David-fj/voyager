@@ -107,7 +107,7 @@ body {
     background-image:
     linear-gradient(to bottom, rgba(0, 0, 0, 0.207), rgba(0, 0, 0, 0.695)),
     url(../../images/portrait-astronaut-space-suit-doing-common-activity-outdoors-min.webp);
-    background-size: 100% auto;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     padding: 5rem 40rem 0 3rem;
@@ -166,6 +166,7 @@ body {
     align-items: center;
     justify-content: space-between;
     border-radius: 1rem;
+    cursor: pointer;
 }
 
 .estudos-ref img {
