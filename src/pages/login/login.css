@@ -116,9 +116,16 @@ main form button{
     margin-bottom: 1.5625rem;
     padding: 0.75rem;
     border: none;
+    font-weight: 500;
     border-radius: 0.5rem;
     background: var(--cad-main-bk);
     color: var(--white-color);
+    transition: 0.3s;
+}
+
+main form button:hover{
+    background: var(--border-cads);
+    color: var(--cad-main-bk);
 }
 
 p{
@@ -152,6 +159,15 @@ span{
     font-weight: 100;
     text-align: center;
     width: 100%;
+    font-weight: 300;
+    transition: 0.3s;
+}
+
+.conta:hover,
+.conta1:hover{
+    background: var(--white-color);
+    color: var(--nav-color);
+
 }
 
 .entrar{

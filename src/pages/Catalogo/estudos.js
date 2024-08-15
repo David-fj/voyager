@@ -10,7 +10,7 @@ function buscarOsTemas() {
                 cardTema.href = "../VideoPage/video.html"
 
                 const cardImg = document.createElement("img")
-                cardImg.src = tema.icone            //tema.(o atributo do objeto no json)
+                cardImg.src = tema.icone     //tema.(o atributo do objeto no json)
                 cardImg.alt = tema.iconedescricao           //tema.(o atributo do objeto no json)
 
                 const cardDiv = document.createElement("div")

@@ -17,23 +17,30 @@
     --cards: #115575;
     --color-bk: #141A23;
     --green-blue-darker: #061E29;
+
 }
 
 /* HEADER */
 
 header{
     height: 6.0625rem;
+    background: var(--nav-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 nav{
+    align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    background: var(--nav-color);
     width: 100%;
     height: 6.0625rem;
     padding: 1rem;
+
+    max-width: 1920px;
 }
 
 button{
@@ -101,16 +108,26 @@ body {
     height: 100vh;
 }
 
+
+
 .catalogoContainer {
     width: 100%;
-    height: 48rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-image:
     linear-gradient(to bottom, rgba(0, 0, 0, 0.207), rgba(0, 0, 0, 0.695)),
     url(../../images/portrait-astronaut-space-suit-doing-common-activity-outdoors-min.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    padding: 5rem 40rem 0 3rem;
+    padding: 5rem 0 0 3rem;
+}
+
+.content-catalogo{
+    height: 48rem;
+    width: 100%;
+    max-width: 1920px;
 }
 
 .catalogoContainer h1 {
@@ -126,7 +143,9 @@ body {
     margin: 2rem 0;
     font-size: 1.25rem;
     letter-spacing: 0.05rem;
-    font-weight: 200;
+    font-weight: 300;
+    max-width: 60rem;
+    text-align: justify;
 }
 
 
@@ -167,13 +186,7 @@ body {
     justify-content: space-between;
     border-radius: 1rem;
     cursor: pointer;
-}
-
-.estudos-ref img {
-    height: 11rem;
-    width: 11rem;
-  
-    margin-top: 1rem;
+    transition: 0.3s;
 }
 
 .colorbk {
@@ -187,6 +200,20 @@ body {
   
     border-radius: 0 0 1rem 1rem;
 }
+.estudos-ref:hover {
+    background: var(--color-bk);
+    & .colorbk{
+        background: var(--cards);
+    }
+    
+}
+.estudos-ref img {
+    height: 11rem;
+    width: 11rem;
+  
+    margin-top: 1rem;
+}
+
 
 /* FOOTER */
 
