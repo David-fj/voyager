@@ -5,8 +5,9 @@ function buscarOsTemas() {
             const buscarCaixaDeTema = document.querySelector("#temas")          //busca a section onde fica os "card"
 
             data.map(tema => {          //.map busca dentro do .json cada objeto, o tema pode mudar é tipo variavel
-                const cardTema = document.createElement("div")
+                const cardTema = document.createElement("a")
                 cardTema.classList.add("estudos-ref")
+                cardTema.href = "../VideoPage/video.html"
 
                 const cardImg = document.createElement("img")
                 cardImg.src = tema.icone            //tema.(o atributo do objeto no json)

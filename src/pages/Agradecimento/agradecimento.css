@@ -173,3 +173,75 @@ footer a{
     text-decoration: none;
     color: var(--white-color);
 }
+
+.bruno {
+    background-image: url(../../images/BRUNO.png);
+    background-position: center;
+    background-size: cover;
+    transition: 0.5s;
+}
+
+.bruno:hover {
+    background-image: url(../../images/BRUNO2.png);
+    transition: 0.5s;
+}
+
+.ujhafsuy {
+    background-image: url(../../images/UJHAFSUY.png);
+    background-position: center;
+    background-size: cover;
+    transition: 0.5s;
+}
+
+.ujhafsuy:hover {
+    background-image: url(../../images/EDUARDO2.png);
+    transition: 0.5s;
+}
+
+.bispo {
+    background-image: url(../../images/BISPO.png);
+    background-position: center;
+    background-size: cover;
+    transition: 0.5s;
+}
+
+.bispo:hover {
+    background-image: url(../../images/BISPO2.png);
+    transition: 0.5s;
+}
+
+.reis {
+    background-image: url(../../images/pedrin.png);
+    background-position: center;
+    background-size: cover;
+    transition: 0.5s;
+}
+
+.reis:hover {
+    background-image: url(../../images/pedrin2.png);
+    transition: 0.5s;
+}
+
+.dedomedio {
+    background-image: url(../../images/samuel1.png);
+    background-position: center;
+    background-size: cover;
+    transition: 0.5s;
+}
+
+.dedomedio:hover {
+    background-image: url(../../images/samuel2.png);
+    transition: 0.5s;
+}
+
+.davide {
+    background-image: url(../../images/david1.png);
+    background-position: center;
+    background-size: cover;
+    transition: 0.5s;
+}
+
+.davide:hover {
+    background-image: url(../../images/DAVID22.png);
+    transition: 0.5s;
+}
