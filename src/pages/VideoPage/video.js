@@ -17,3 +17,19 @@ for (
     }
   });
 }
+
+
+window.addEventListener('scroll', function() {
+  const navHeight = document.querySelector('nav').offsetHeight;
+  const aside = document.querySelector('aside');
+  const scrollTop = window.scrollY;
+  
+  if (scrollTop > navHeight) {
+      aside.style.position = 'fixed';
+      aside.style.top = '0';
+  } else {
+      aside.style.position = 'fixed';
+      aside.style.top = '6.0625rem';
+  }
+});
+
