@@ -127,6 +127,7 @@ aside {
   border-left: 2px solid var(--green-blue);
 
   overflow: auto;
+  transition: 0.3s;
 }
 
 span {

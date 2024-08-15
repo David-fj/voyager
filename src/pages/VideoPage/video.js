@@ -26,10 +26,10 @@ window.addEventListener('scroll', function() {
   
   if (scrollTop > navHeight) {
       aside.style.position = 'fixed';
-      aside.style.top = '0';
+      aside.style.transform = "translateY(-6.0625rem)";
   } else {
       aside.style.position = 'fixed';
-      aside.style.top = '6.0625rem';
+      aside.style.transform = "translateY(0)";
   }
 });
 
