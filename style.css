@@ -297,6 +297,21 @@ span {
   transform: rotate(180deg);
 }
 
+.perguntas button .rodar{
+  transform: rotate(270deg);
+}
+
+.perguntas div p{
+  display: none;
+}
+
+.perguntas div .ativo{
+  display: block;
+  padding: 1rem 0;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
 /*FOOTER*/
 
 footer {
