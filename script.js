@@ -1,5 +1,5 @@
 const perguntas = document.querySelectorAll('.perguntas div button');
-
+let c = 0;
 for (let i = 0; i < perguntas.length; i++) {
   perguntas[i].addEventListener("click", () => {
     const paragrafos = document.querySelectorAll('.perguntas div div');
@@ -14,7 +14,6 @@ for (let i = 0; i < perguntas.length; i++) {
         paragrafos[j].lastElementChild.classList.remove('ativo');
         perguntas[j].firstElementChild.classList.remove('rodar');
       }
-
       paragrafo.classList.add('ativo');
       image.classList.add('rodar');
     }

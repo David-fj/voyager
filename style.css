@@ -13,6 +13,16 @@
   --cad-main-bk: #115575;
 }
 
+@keyframes p-animation {
+  from{
+    height: 0rem;
+  }
+  to{
+    height: 8rem;
+  }
+
+}
+
 body {
   color: var(--white-color);
   background: black;
@@ -272,7 +282,13 @@ span {
   background: black;
   height: 25rem;
   text-align: justify;
-  gap: 10rem;
+  gap: 20rem;
+}
+
+.perguntas h2{
+  width: 40rem;
+  text-align: center;
+  padding-left: 4rem;
 }
 
 .perguntas button {
@@ -284,7 +300,6 @@ span {
   margin-bottom: 1rem;
   cursor: pointer;
   gap: 1rem;
-
   display: flex;
   align-items: center;
 }
@@ -301,8 +316,23 @@ span {
   transform: rotate(270deg);
 }
 
+.perguntas div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.perguntas div div{
+  display: flex;
+  align-items: flex-start;
+  width: 40rem;
+}
+
 .perguntas div p{
   display: none;
+  text-align: justify;
+  height: 8rem;
 }
 
 .perguntas div .ativo{
@@ -310,6 +340,8 @@ span {
   padding: 1rem 0;
   font-weight: 300;
   font-size: 1rem;
+  animation-name: p-animation;
+  animation-duration: 0.3s;
 }
 
 /*FOOTER*/
