@@ -120,12 +120,23 @@ header ul li, .cadastro-header a {
   height: 35.125rem;
   width: 100%;
 }
+.volta{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
 .tituloVideo{
   padding: 0.5rem 0 0 0.5rem;
-  position: absolute;
   padding: 1rem;
 }
+
+.voltamenu{
+  padding: 1.4rem;
+  display: none;
+  cursor: pointer;
+}
+
 
 aside {
   width: 20%;

@@ -33,3 +33,25 @@ window.addEventListener('scroll', function() {
   }
 });
 
+const fechar = document.querySelector(".fechar") 
+fechar.onclick = () => {
+  console.log("Pêssego")
+  const menu = document.querySelector("aside")
+  const divVideo = document.querySelector(".videoAula .videozao")
+  const voltaMenu = document.querySelector(".voltamenu")
+  if ( voltaMenu.style.display = "none" ) {
+    menu.style.display = "none"
+    divVideo.style.width = "100%"
+    voltaMenu.style.display = "block"
+    }
+}
+
+const voltaMenu = document.querySelector(".voltamenu")
+voltaMenu.onclick = () => {
+  console.log("Pêssego")
+  const menu = document.querySelector("aside")
+  const divVideo = document.querySelector(".videoAula .videozao")
+  menu.style.display = "block"
+  divVideo.style.width = "80%"
+  voltaMenu.style.display = "none"
+}
