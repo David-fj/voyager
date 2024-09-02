@@ -25,6 +25,10 @@ color: var(--text-logo-color);
 --borda-sla: #061e29;
 }
 
+html{
+    background: var(--nav-color);
+}
+
 body {
     height: 100svh;
     background-color: var(--podio-background);

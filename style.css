@@ -13,6 +13,10 @@
   --cad-main-bk: #115575;
 }
 
+html{
+  background: var(--nav-color);
+}
+
 @keyframes p-animation {
   from{
     height: 0rem;

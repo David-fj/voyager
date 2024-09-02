@@ -20,6 +20,10 @@
 
 }
 
+html{
+    background: var(--nav-color);
+}
+
 /* HEADER */
 
 header{
@@ -87,19 +91,26 @@ header ul li, .cadastro-header a {
     color: var(--text-logo-color);
 }
 
-.cadastro-header a{
+.cadastro-header a {
     text-decoration: none;
-    
     gap: 2rem;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    transition: 0.3s;
+}
+   
+
+.cadastro-header a:hover{
+    background: var(--border-cads);
 }
 
-.cadastro-header a img{
-    height: 1.75rem;
-    width: 1.75rem;
+.cadastro-header a img {
+height: 1.75rem;
+width: 1.75rem;
 }
-
-.cadastro-header img svg:hover{
-    fill: var(--border-cads);
+  
+.cadastro-header img svg:hover {
+fill: var(--border-cads);
 }
 
 /* MAIN */

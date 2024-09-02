@@ -20,6 +20,10 @@
   --podio-background: #06090d;
 }
 
+html{
+  background: var(--nav-color);
+}
+
 body {
   height: 100svh;
 }
