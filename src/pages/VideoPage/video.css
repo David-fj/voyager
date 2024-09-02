@@ -213,6 +213,10 @@ h2 {
   border-left: var(--nav-color);
 }
 
+
+.fechar {
+  cursor: pointer;
+}
 /*FOOTER*/
 
 .footer {
