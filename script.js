@@ -19,3 +19,16 @@ for (let i = 0; i < perguntas.length; i++) {
     }
   });
 }
+
+const entrarButton = document.querySelector(".entrar");
+const cadastroButton = document.querySelector(".b-cadastro");
+
+entrarButton.addEventListener('click', () => {
+  localStorage.removeItem("loginPage");
+  localStorage.setItem("loginPage", 0);
+})
+
+cadastroButton.addEventListener('click', () => {
+  localStorage.removeItem("loginPage");
+  localStorage.setItem("loginPage", 1);
+})
