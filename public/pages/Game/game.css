@@ -181,4 +181,24 @@ main {
     width: 100%;
     height: 100%;
     background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+}
+
+.dino {
+    width: 4rem;
+    height: 4rem;
+    background-position: center;
+    background-size: cover;
+    margin: 0 0 0 1.5rem;
+}
+
+.chao {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    top: 54%;
 }
