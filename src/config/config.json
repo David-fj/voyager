@@ -8,17 +8,19 @@
       "dialect": "mysql"
     },
     "test": {
-      "username": "root",
-      "password": null,
-      "database": "database_test",
-      "host": "127.0.0.1",
+      "username": "edutec",
+      "password": "SDqzIqe0",
+      "database": "voyagerdb",
+      "host": "179.34.1.80",
+      "port": 3306,
       "dialect": "mysql"
     },
     "production": {
-      "username": "root",
-      "password": null,
-      "database": "database_production",
-      "host": "127.0.0.1",
+      "username": "edutec",
+      "password": "SDqzIqe0",
+      "database": "voyagerdb",
+      "host": "179.34.1.80",
+      "port": 3306,
       "dialect": "mysql"
     }
   }
