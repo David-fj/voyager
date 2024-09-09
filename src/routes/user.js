@@ -24,7 +24,7 @@ router.post('/register', async (req, res) => {
   }
 });
 
-router.post('/login', async (req, res) => {
+/*router.post('/login', async (req, res) => {
   const { email, senha } = req.body;
 
   try {
@@ -49,6 +49,6 @@ router.post('/login', async (req, res) => {
     console.error('Erro ao fazer login:', error);
     res.status(500).json({ error: 'Erro interno do servidor' });
   }
-});
+});*/
 
 module.exports = router;

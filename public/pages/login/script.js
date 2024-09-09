@@ -70,7 +70,7 @@ document.getElementById('registerForm').addEventListener('submit', async (event)
 });
 
 // LOGIN - Márcio nunca duvide dos seus alunos, eu não vou desistir, não por que vc falou que eu iria desistir e sim porque isso é algo que eu quero, mesmo que dê errado, eu fiz!
-
+/*
 document.getElementById('loginForm').addEventListener('submit', async (event) => {
     event.preventDefault();
   
@@ -92,5 +92,5 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
       alert('Credenciais inválidas.');
     }
   });
-  
+  */
   
