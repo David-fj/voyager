@@ -74,7 +74,7 @@ document.getElementById('registerForm').addEventListener('submit', async (event)
 document.getElementById('loginForm').addEventListener('submit', async (event) => {
     event.preventDefault();
   
-    const email = document.getElementById('vnome').value;
+    const email = document.getElementById('vemail').value;
     const senha = document.getElementById('vsenha').value;
   
     const response = await fetch('/login', {
