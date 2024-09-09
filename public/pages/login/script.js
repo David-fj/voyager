@@ -86,7 +86,6 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
     const result = await response.json();
   
     if (result.success) {
-      localStorage.setItem("loggado", "sim")
       alert('Login bem-sucedido!');
       window.location.href = "../Home-logged/index.html";
     } else {
