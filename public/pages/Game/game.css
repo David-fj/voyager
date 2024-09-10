@@ -23,6 +23,7 @@ color: var(--text-logo-color);
 --background-padrao: #585858;
 --background-game: #D9D9D9;
 --borda-sla: #061e29;
+--red: #ee5454;
 }
 
 html{
@@ -33,6 +34,30 @@ body {
     height: 100svh;
     background-color: var(--podio-background);
 }
+
+.deslogar{
+    position: fixed;
+    top: 40rem;
+    left: 80rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 40rem;
+    border: none;
+    background: var(--red);
+  
+    z-index: 999;
+  }
+  
+  .logar{
+    position: fixed;
+    top: 40rem;
+    left: 80rem;
+    padding: 1rem;
+    border-radius: 40rem;
+    border: none;
+    background: var(--border-cads);
+  
+    z-index: 999;
+  }
   
 header {
 height: 6.0625rem;

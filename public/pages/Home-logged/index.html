@@ -8,7 +8,7 @@
     <title>Voyager</title>
     <link rel="stylesheet" href="style.css" media="all" />
     <link rel="icon" href="../../images/book.svg">
-
+    <script src="./script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,6 +17,16 @@
     />
   </head>
   <body>
+    <button class="deslogar">Sair</button>
+    <button class="logar">Entrar</button>
+    <div id="customAlert" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <p id="alertMessage">Deseja continuar?</p>
+        <button id="cancelBtn">Cancelar</button>
+        <button id="okBtn">OK</button>
+      </div>
+    </div>
     <header>
       <nav>
         <ul class="navList">
@@ -28,7 +38,7 @@
           </li>
           <li class="cadastro-header">
             <div class="entrar">
-              <a href="../login/login.html">
+              <a href="../Catalogo/index.html">
                 Estudo
                 <!--Trocar a barra de cima-->
                 <img src="../../images/book.svg" alt="" class="image-header" />
@@ -58,7 +68,7 @@
     </header>
     <main>
       <section class="home">
-        <h1>Olá, <span>{nome do usuário}!</span></h1>
+        <h1>Olá, <span id="nomeUsuario">{nome do usuário}!</span></h1>
         <h2>Continuar estudos!</h2>
 
         <div class="aling-estudo">

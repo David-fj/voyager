@@ -9,8 +9,11 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      urlvideo: {
+      resumo: {
         type: Sequelize.STRING
+      },
+      idconteudo: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

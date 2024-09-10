@@ -14,6 +14,7 @@
     --cad-main-bk: #115575;
     --input-bk: #E7EEF1;
     --color-input: #061E29;
+    --red: #ee5454;
 
     --background-foguete: url('../../images/foguete.webp');
 }
@@ -100,6 +101,14 @@ main form input{
     border-radius: 0.5rem;
     background: var(--input-bk);
     color: black;
+}
+
+.errado{
+    outline: 2px solid var(--red);
+}
+
+.certo{
+    outline: 2px solid var(--border-cads);
 }
 
 main form input[placeholder]{

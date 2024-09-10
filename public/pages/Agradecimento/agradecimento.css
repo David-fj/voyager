@@ -17,11 +17,36 @@
     --cards: #115575;
     --color-bk: #141A23;
     --green-blue-darker: #061E29;
+    --red: #ee5454;
 }
 
 html{
     background: var(--nav-color);
 }
+
+.deslogar{
+    position: fixed;
+    top: 40rem;
+    left: 80rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 40rem;
+    border: none;
+    background: var(--red);
+  
+    z-index: 999;
+  }
+  
+  .logar{
+    position: fixed;
+    top: 40rem;
+    left: 80rem;
+    padding: 1rem;
+    border-radius: 40rem;
+    border: none;
+    background: var(--border-cads);
+  
+    z-index: 999;
+  }
 
 header {
     height: 6.0625rem;

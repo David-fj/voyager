@@ -31,16 +31,21 @@ cadastro.addEventListener("click", mudarParaCadastro)
 // CADASTRO
 
 document.getElementById('registerForm').addEventListener('submit', async (event) => {
-    event.preventDefault(); // Impede o comportamento padrão do formulário
+    event.preventDefault();
   
     const name = document.getElementById('nome').value;
     const email = document.getElementById('email').value;
     const senha = document.getElementById('senha').value;
     const conSenha = document.getElementById('consenha').value;
+    const inputs = document.querySelectorAll("#registerForm input");
+    const submitButton = document.querySelector("#registerForm button");
 
     if( senha === conSenha ){
 
     try {
+      submitButton.disabled = true;
+      submitButton.textContent = "Carregando...";
+
       const response = await fetch('/api/register', {
         method: 'POST',
         headers: {
@@ -53,17 +58,33 @@ document.getElementById('registerForm').addEventListener('submit', async (event)
         const result = await response.json();
         alert('Usuário cadastrado com sucesso!');
         console.log(result);
+
+        localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem('userName', name);
+        inputs.forEach(input => {
+          input.className = "certo"
+        })
         window.location.href = "../Home-logged/index.html";
+        
       } else {
         const error = await response.json();
+        inputs.forEach(input => {
+          input.className = "errado"
+        });
         alert(`Erro: ${error.error}`);
       }
     } catch (error) {
       console.error('Erro ao fazer a requisição:', error);
       alert('Erro ao cadastrar o usuário.');
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = "Cadastrar";
     }
     } else {
         alert("As senhas não condizem!")
+        inputs.forEach(input => {
+          input.className = "errado"
+        });
     }
   
 
