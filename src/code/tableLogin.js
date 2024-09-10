@@ -1,11 +1,15 @@
 const db = require('../models/index');
 const User = db.User;
 
-function trazerPessoas(id){
-    User.findByPk(id).then(user =>{
-        console.log('\n \n \n')
-        console.log(JSON.stringify(user))
-    })
+function trazerPessoas(em, sh){
+    User.findOne({ where: { 
+        email: em,
+        senha: sh
+    } 
+}).then(pessoa => {
+    console.log('\n \n \n')
+    console.log(pessoa)
+});
 }
 
-trazerPessoas(1)
+trazerPessoas('teste@gmail.com', 'teste123')

@@ -20,6 +20,7 @@
   "homepage": "https://github.com/David-fj/voyager#readme",
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
     "express": "^4.19.2",
     "mysql2": "^3.11.0",
     "sequelize": "^6.37.3"

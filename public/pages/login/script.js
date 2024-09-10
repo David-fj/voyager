@@ -70,27 +70,30 @@ document.getElementById('registerForm').addEventListener('submit', async (event)
 });
 
 // LOGIN - Márcio nunca duvide dos seus alunos, eu não vou desistir, não por que vc falou que eu iria desistir e sim porque isso é algo que eu quero, mesmo que dê errado, eu fiz!
-/*
+
 document.getElementById('loginForm').addEventListener('submit', async (event) => {
     event.preventDefault();
   
     const email = document.getElementById('vemail').value;
     const senha = document.getElementById('vsenha').value;
+
+    console.log(email)
   
-    const response = await fetch('/login', {
+    const response = await fetch('/api/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, senha })
     });
   
     const result = await response.json();
-  
+    console.log(result)
     if (result.success) {
       alert('Login bem-sucedido!');
       window.location.href = "../Home-logged/index.html";
     } else {
-      alert('Credenciais inválidas.');
+      alert('Credenciais inválidas script.');
+      console.log(result)
     }
   });
-  */
+
   
