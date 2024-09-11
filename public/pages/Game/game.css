@@ -151,13 +151,16 @@ main {
 
 /*Da Pagina*/
 
+body {
+    background: var(--background-padrao);
+    height: 100%;
+}
+
 .gameCase{
-    background-color: var(--borda-sla);
+    background-color: var(--background-game);
     width: 78.625rem;
     height: 48.5rem;
-    position: relative;
     margin-top: 4.625rem;
-    margin-bottom: 4.625rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -167,7 +170,7 @@ main {
     background-color: var(--menu-color);
     width: 100%;
     height: 4.813rem;
-    position: absolute;
+    position: relative;
     bottom: 0;
     display: flex;
     justify-content: space-between;
@@ -182,7 +185,63 @@ main {
     margin-right: 1rem;
 }
 
-.gameContainer {
+#pontuacao {
+    color: black;
+    margin-right : 1rem;
+    margin-top: 0.5rem;
+}
+
+#gameArea {
+    position: relative;
+    width: 60rem;
+    height: 24.5rem;
+    max-width: 800px;
+    border: 2px solid #000;
+    overflow: hidden;
+    background-color: white;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#dino {
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    width: 4rem;
+    height: 4rem;
+    background-image: url("../../images/sprite/00_sprite.png");
+    background-position: center;
+    background-size: cover;
+}
+
+#obstaculo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 4rem;
+    height: 4rem;
+    background-image: url("../../images/sprite\ \(1\)/00_sprite (1).png");
+    background-position: center;
+    background-size: cover;
+    display: none;
+}
+
+@keyframes moverObstaculo {
+    from {
+        right: -20px;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+/* #mensagem {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #333;
+} */
+
+/* .gameContainer {
     width: 100%;
     height: 100%;
     background-color: white;
@@ -225,4 +284,36 @@ main {
     display: flex;
     height: 20rem;
     align-items: center;
+} */
+
+/* FOOTER */
+
+footer {
+    margin-top: 4.7625rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+    height: 10rem;
+  
+    background: var(--nav-color);
 }
+  
+footer div {
+    border: 1px solid var(--white-color);
+    height: 5rem;
+}
+  
+.logorodape {
+    height: 4rem;
+    width: 4rem;
+}
+  
+footer a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--white-color);
+}
+  
