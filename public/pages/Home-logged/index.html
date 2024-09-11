@@ -17,16 +17,6 @@
     />
   </head>
   <body>
-    <button class="deslogar">Sair</button>
-    <button class="logar">Entrar</button>
-    <div id="customAlert" class="modal">
-      <div class="modal-content">
-        <span class="close-btn">&times;</span>
-        <p id="alertMessage">Deseja continuar?</p>
-        <button id="cancelBtn">Cancelar</button>
-        <button id="okBtn">OK</button>
-      </div>
-    </div>
     <header>
       <nav>
         <ul class="navList">
@@ -62,17 +52,34 @@
                 <img src="../../images/team.svg" alt="" class="image-header" />
               </a>
             </div>
+            <div class="logar">
+              <a href="../login/login.html" id="logar">
+                Entrar
+                <!--Trocar a barra de cima-->
+                <img src="../../images/user.svg" alt="" class="image-header" />
+              </a>
+            </div>
+            <div class="deslogar">
+              <a href="../../index.html" id="deslogar">
+                Sair
+                <!--Trocar a barra de cima-->
+                <img src="../../images/user.svg" alt="" class="image-header" />
+              </a>
+            </div>
           </li>
         </ul>
       </nav>
     </header>
     <main>
       <section class="home">
+        <div class="alinhamento">
         <h1>Olá, <span id="nomeUsuario">{nome do usuário}!</span></h1>
         <h2>Continuar estudos!</h2>
+      </div>
 
         <div class="aling-estudo">
-          <div class="estudos-ref">
+          <div id="temas"></div>
+          <!-- <div class="estudos-ref">
             <img
               src="../../images/img-rocket.svg"
               alt="Ilustração sobre o estudo"
@@ -97,7 +104,9 @@
                 celestes que orbitam o Sol. Vamos conhece-los nessas aulas.
               </p>
             </div>
-          </div>
+          </div> -->
+          <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+      <button class="next" onclick="moveSlide(1)">&#10095;</button>
         </div>
       </section>
       <section class="podio">

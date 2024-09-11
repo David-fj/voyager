@@ -45,52 +45,57 @@ mudaLinkHome()
 
 // teste
 
-function showCustomAlert(message, onConfirm, onCancel) {
-    const modal = document.getElementById("customAlert");
-    const alertMessage = document.getElementById("alertMessage");
-    const cancelBtn = document.getElementById("cancelBtn");
-    const okBtn = document.getElementById("okBtn");
-    const closeBtn = document.getElementsByClassName("close-btn")[0];
-  
-    // Define a mensagem no modal
-    alertMessage.textContent = message;
-  
-    // Exibe o modal
-    modal.style.display = "block";
-  
-    // Quando o usuário clicar no "OK"
-    okBtn.onclick = function() {
-      modal.style.display = "none";
-      if (onConfirm) onConfirm();
-    }
-  
-    // Quando o usuário clicar em "Cancelar"
-    cancelBtn.onclick = function() {
-      modal.style.display = "none";
-      if (onCancel) onCancel();
-    }
-  
-    // Quando o usuário clicar no "X"
-    closeBtn.onclick = function() {
-      modal.style.display = "none";
-    }
-  
-    // Quando o usuário clicar fora do modal
-    window.onclick = function(event) {
-      if (event.target === modal) {
-        modal.style.display = "none";
-      }
-    }
-  }
-  
-  // Exemplo de uso
-  document.getElementById('someButton').addEventListener('click', () => {
-    showCustomAlert('Você realmente deseja continuar?', 
-      function() { 
-        alert('Usuário clicou em OK!'); 
-      }, 
-      function() { 
-        alert('Usuário clicou em Cancelar!'); 
-      }
-    );
-  });
+function buscarOsTemas() {
+  fetch('../Catalogo/data.json')          //Buscar o .json
+      .then(response => response.json())          // se achar o .json pega a resposta
+      .then(data => {         //se a resposta for data (porque não vai vim data.json e sim data) ele segue
+          const buscarCaixaDeTema = document.querySelector("#temas")          //busca a section onde fica os "card"
+
+          data.map(tema => {          //.map busca dentro do .json cada objeto, o tema pode mudar é tipo variavel
+              const cardTema = document.createElement("a")
+              cardTema.classList.add("estudos-ref")
+              cardTema.href = "../VideoPage/video.html"
+
+              const cardImg = document.createElement("img")
+              cardImg.src = tema.icone     //tema.(o atributo do objeto no json)
+              cardImg.alt = tema.iconedescricao           //tema.(o atributo do objeto no json)
+
+              const cardDiv = document.createElement("div")
+              cardDiv.classList.add("colorbk")
+
+              const cardTitulo = document.createElement("h3")
+              cardTitulo.textContent = tema.titulo            //tema.(o atributo do objeto no json)
+
+              const cardDescricao = document.createElement("p")
+              cardDescricao.textContent = tema.descricao          //tema.(o atributo do objeto no json)
+
+              buscarCaixaDeTema.appendChild(cardTema)         //transforma o cardTema no "filho" da section
+
+              cardTema.appendChild(cardImg)           //transforma o cardImg no "filho" da cardTema
+              cardTema.appendChild(cardDiv)           //transforma o cardDiv no "filho" da cardTema
+
+              cardDiv.appendChild(cardTitulo)         //transforma o cardTitulo no "filho" da cardDiv
+              cardDiv.appendChild(cardDescricao)         //transforma o cardDescricao no "filho" da cardDiv
+          })
+      })
+
+}
+
+buscarOsTemas()
+
+let i = 0;
+const slidesToShow = 8;
+
+function moveSlide(step) {
+  const slides = document.querySelectorAll('#temas a');
+  const totalSlides = slides.length;
+
+  i = (i + step + totalSlides) % totalSlides;
+
+  const offset = -i * (100 / slidesToShow);
+  document.querySelector('#temas').style.transform = `translateX(${offset}%)`;
+}
+
+document.querySelector('.prev').addEventListener('click', () => moveSlide(-1));
+document.querySelector('.next').addEventListener('click', () => moveSlide(1));
+

@@ -34,30 +34,6 @@ body {
     height: 100svh;
     background-color: var(--podio-background);
 }
-
-.deslogar{
-    position: fixed;
-    top: 40rem;
-    left: 80rem;
-    padding: 0.5rem 0.75rem;
-    border-radius: 40rem;
-    border: none;
-    background: var(--red);
-  
-    z-index: 999;
-  }
-  
-  .logar{
-    position: fixed;
-    top: 40rem;
-    left: 80rem;
-    padding: 1rem;
-    border-radius: 40rem;
-    border: none;
-    background: var(--border-cads);
-  
-    z-index: 999;
-  }
   
 header {
 height: 6.0625rem;
@@ -155,6 +131,10 @@ fill: var(--border-cads);
 span {
 color: var(--border-cads);
 }
+
+.cadastro-header #deslogar:hover{
+    background: var(--red);
+  }
   
 li,
 ul div li {
