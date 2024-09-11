@@ -55,3 +55,48 @@ voltaMenu.onclick = () => {
   divVideo.style.width = "80%"
   voltaMenu.style.display = "none"
 }
+
+/*Trocar aulas*/
+const aulaCos = document.querySelectorAll(".cosmologia li");
+
+const aulaSis = document.querySelectorAll(".sistema li");
+
+const aulaEstrelas = document.querySelectorAll(".estrelas li");
+const iframe = document.querySelector("iframe")
+
+function buscarOsTemas() {
+  fetch('data.json')          //Buscar o .json
+      .then(response => response.json())          // se achar o .json pega a resposta
+      .then(data => {         //se a resposta for data (porque não vai vim data.json e sim data) ele segue
+          console.log(data.Cosmologia)
+          aulaCos.forEach(aula => {
+            aula.addEventListener('click', (event) => {
+              const elementoClicado = event.target;
+              const clickArray = Array.from(aulaCos).indexOf(elementoClicado);
+              iframe.src = `${data.Cosmologia[clickArray]}`
+              console.log(elementoClicado, clickArray)
+            })
+          })
+          
+          aulaSis.forEach(aula => {
+            aula.addEventListener('click', (event) => {
+              const elementoClicado = event.target;
+              const clickArray = Array.from(aulaSis).indexOf(elementoClicado);
+              iframe.src = `${data.SistemaSolar[clickArray]}`
+              console.log(elementoClicado, clickArray)
+            })
+          })
+          
+          aulaEstrelas.forEach(aula => {
+            aula.addEventListener('click', (event) => {
+              const elementoClicado = event.target;
+              const clickArray = Array.from(aulaEstrelas).indexOf(elementoClicado);
+              iframe.src = `${data.Estrelas[clickArray]}`
+              console.log(elementoClicado, clickArray)
+            })
+          })
+        })
+        
+}
+
+buscarOsTemas()

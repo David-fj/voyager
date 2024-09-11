@@ -19,7 +19,7 @@ logar.addEventListener("click", () => {
 function mudaLinkHome() {
     if (localStorage.getItem("isLoggedIn") == "true"){
         logar.style.display = "none";
-        logoLink.setAttribute("href", "#")        
+        logoLink.setAttribute("href", "../Home-logged/index.html")        
     } else {
         deslogar.style.display = "none";
     }

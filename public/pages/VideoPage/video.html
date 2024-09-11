@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./video.css" media="all">
     <link rel="icon" href="../../images/book.svg">
     <script src="./video.js" defer></script>
+    <script src="../../helpers/linkHome.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,6 +51,20 @@
                   <img src="../../images/team.svg" alt="" class="image-header" />
                 </a>
               </div>
+              <div class="logar">
+                <a href="../login/login.html" id="logar">
+                  Entrar
+                  <!--Trocar a barra de cima-->
+                  <img src="../../images/user.svg" alt="" class="image-header" />
+                </a>
+              </div>
+              <div class="deslogar">
+                <a href="../../index.html" id="deslogar">
+                  Sair
+                  <!--Trocar a barra de cima-->
+                  <img src="../../images/user.svg" alt="" class="image-header" />
+                </a>
+              </div>
             </li>
           </ul>
         </nav>
@@ -61,10 +76,14 @@
                     <h2 class="tituloVideo">Aula 1 - Cosmologia</h2>
                     <img src="../../images/menu.svg" alt="menu de aulas" class="voltamenu">
                 </div>
-                <video id="videoExibicao" src="../../videos/cosmologiaAula1.mp4" poster="../../images/Earth_Pacific.png" controls title="Aula 1 - Cosmologia">
-                    <!-- <source src="../../videos/cosmologiaAula1.mp4" type="video/mp4"> -->
-                </video>
-            
+                <!-- <video id="videoExibicao" poster="../../images/Earth_Pacific.png" controls title="Aula 1 - Cosmologia">
+                    <source src="https://youtu.be/-pfvoEJGug4?si=gVgtRNw1cUQCrGvT" type="video/mp4">
+                </video> -->
+                <iframe id="videoExibicao"
+                src="https://www.youtube.com/embed/-pfvoEJGug4?si=z0uxlbaKVZfy95w0" 
+                title="YouTube video player" frameborder="0" allow="accelerometer; 
+                clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
             <div class="resumo">
             <h2><span>Resumo</span></h2>
@@ -85,35 +104,38 @@
             <img src="../../images/close.svg" alt="X" class="fechar">
         </div>
         <div id="aulasMesmoTema">
-            <h2 class="tema">Cosmologia</h2>
+            <h2 class="tema cosmo">Cosmologia</h2>
             <div class="panel">
-                <ul class="video-list">
-                    <li>Aula 1</li>
-                    <li>Aula 2</li>
-                    <li>Aula 3</li>
-                    <li>Aula 4</li>
+                <ul class="video-list cosmologia">
+                    <li>Introdução à Cosmologia</li>
+                    <li>Big Bang e Expansão do Universo</li>
+                    <li>Matéria Escura e Energia Escura</li>
+                    <li>Estrutura em Grande Escala do Universo</li>
+                    <li>Fim do Universo</li>
                 </ul>
             </div>
         </div>
         <div id="aulasOutroTema">
             <h2 class="tema">Sistema Solar</h2>
             <div class="panel">
-                <ul class="video-list">
-                    <li>Aula 1</li>
-                    <li>Aula 2</li>
-                    <li>Aula 3</li>
-                    <li>Aula 4</li>
+                <ul class="video-list sistema">
+                    <li>Introdução ao Sistema Solar</li>
+                    <li>O Sol</li>
+                    <li>Satélites Naturais</li>
+                    <li>Cinturões de Asteroides e Cinturão de Juiper</li>
+                    <li>Cometas e Meteoroides</li>
                 </ul>
             </div>
         </div>
         <div id="aulasOutroTema">
             <h2 class="tema">Estrelas e Evolução Estelar</h2>
             <div class="panel">
-                <ul class="video-list">
-                    <li>Aula 1</li>
-                    <li>Aula 2</li>
-                    <li>Aula 3</li>
-                    <li>Aula 4</li>
+                <ul class="video-list estrelas">
+                    <li>Formação de Estrelas</li>
+                    <li>Ciclo de Vida Estelar</li>
+                    <li>Tipos de Estrelas</li>
+                    <li>Remanescentes Estelares</li>
+                    <li>Explosões Estelares</li>
                 </ul>
             </div>
         </div>

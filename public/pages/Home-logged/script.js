@@ -84,7 +84,7 @@ function buscarOsTemas() {
 buscarOsTemas()
 
 let i = 0;
-const slidesToShow = 8;
+const slidesToShow = 7;
 
 function moveSlide(step) {
   const slides = document.querySelectorAll('#temas a');

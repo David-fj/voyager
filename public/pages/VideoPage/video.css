@@ -23,6 +23,7 @@ body{
   --green-blue-darker: #06090D;
   --green-blue: #061e29;
   --light-blue: #649FED;
+  --red: #ee5454;
 }
 
 header{
@@ -94,6 +95,10 @@ header ul li, .cadastro-header a {
 
 .cadastro-header a:hover{
   background: var(--border-cads);
+}
+
+.cadastro-header #deslogar:hover{
+  background: var(--red);
 }
 
 .cadastro-header a img{
@@ -176,7 +181,6 @@ h2 {
 }
 
 .panel {
-  padding: 0 18px;
   display: none;
   background-color: var(--color-bk);
   overflow: hidden;
@@ -188,7 +192,11 @@ h2 {
 }
 
 .video-list li {
-  padding: 10px 0;
+  padding: 10px 18px;
+}
+
+.video-list li:hover {
+  background: var(--nav-color);
 }
 
 #aulasOutroTema {
