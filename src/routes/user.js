@@ -11,11 +11,11 @@ router.post('/register', async (req, res) => {
     if (!name || !email || !senha) {
       return res.status(400).json({ error: 'Nome e senha são obrigatórios' });
     }
-
+    const hashedPassword = await bcrypt.hash(senha, 10);
     const newUser = await User.create({
       name,
       email,
-      senha
+      senha: hashedPassword
     });
 
     res.status(201).json(newUser);
@@ -24,6 +24,8 @@ router.post('/register', async (req, res) => {
     res.status(500).json({ error: 'Erro interno do servidor' });
   }
 });
+
+/*LOGIN*/
 
 router.post('/login', async (req, res) => {
   const { email, senha } = req.body;
@@ -39,13 +41,12 @@ router.post('/login', async (req, res) => {
     if (!user) {
        return res.status(401).json({ error: 'Usuário não encontrado' });
      }
-
     const isPasswordValid = await bcrypt.compare(senha, user.senha);
-
-    if (isPasswordValid) {
+    if (!isPasswordValid) {
     return res.status(401).json({ error: 'Senha incorreta' });
   }
-  res.status(200).json({ message: 'Login bem-sucedido user' });
+  res.status(200).json({ success: true, name: user.name });
+  
 
 } catch (error) {
   console.error('Erro ao fazer login:', error);

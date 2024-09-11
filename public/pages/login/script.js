@@ -97,8 +97,11 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
   
     const email = document.getElementById('vemail').value;
     const senha = document.getElementById('vsenha').value;
+    const inputs = document.querySelectorAll("#loginForm input");
+    const submitButton = document.querySelector("#loginForm button");
+    submitButton.disabled = true;
+    submitButton.textContent = "Carregando...";
 
-    console.log(email)
   
     const response = await fetch('/api/login', {
       method: 'POST',
@@ -111,9 +114,17 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
     if (result.success) {
       alert('Login bem-sucedido!');
       window.location.href = "../Home-logged/index.html";
+
+      localStorage.setItem('isLoggedIn', 'true');
+      localStorage.setItem('userName', result.name);
+        inputs.forEach(input => {
+          input.className = "certo"
+        })
     } else {
       alert('Credenciais inválidas script.');
       console.log(result)
+      submitButton.disabled = false;
+    submitButton.textContent = "Entrar";
     }
   });
 
