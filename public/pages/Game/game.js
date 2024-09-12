@@ -252,7 +252,7 @@ function updateGame() {
 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  cactus.x -= cactus.speed;
+  cactus.x -= (cactus.speed + (Math.floor(score/5)));
 
   if (cactus.x + cactus.width < 0) {
     cactus.x = canvas.width;
