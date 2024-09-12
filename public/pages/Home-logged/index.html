@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css" media="all" />
     <link rel="icon" href="../../images/book.svg">
     <script src="./script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -79,39 +80,13 @@
 
         <div class="aling-estudo">
           <div id="temas"></div>
-          <!-- <div class="estudos-ref">
-            <img
-              src="../../images/img-rocket.svg"
-              alt="Ilustração sobre o estudo"
-            />
-            <div class="colorbk">
-              <h3>Cosmologia</h3>
-              <p>
-                Cosmologia é o estudo da origem, evolução e estrutura do
-                universo, tudo isso é explanado nas aulas.
-              </p>
-            </div>
-          </div>
-          <div class="estudos-ref">
-            <img
-              src="../../images/img-space-signal.svg"
-              alt="Ilustração sobre o estudo"
-            />
-            <div class="colorbk">
-              <h3>Cosmologia</h3>
-              <p>
-                O Sistema Solar é o conjunto de planetas e outros corpos
-                celestes que orbitam o Sol. Vamos conhece-los nessas aulas.
-              </p>
-            </div>
-          </div> -->
           <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
       <button class="next" onclick="moveSlide(1)">&#10095;</button>
         </div>
       </section>
       <section class="podio">
         <div class="pod-mundial">
-          <table>
+          <table id="pontuacaoTodos">
             <caption>
               Pódio do Jogo!
             </caption>
@@ -123,16 +98,6 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>Ujahfsuy</td>
-                <td>1000</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Marcus</td>
-                <td>999</td>
-              </tr>
             </tbody>
           </table>
         </div>
@@ -153,11 +118,6 @@
                 <td>1</td>
                 <td>Ujahfsuy</td>
                 <td>1000</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Marcus</td>
-                <td>999</td>
               </tr>
             </tbody>
           </table>
