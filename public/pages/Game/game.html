@@ -77,12 +77,12 @@
           <canvas id="gameCanvas"></canvas>
           <p class="pontuacao">000</p>
                 <!-- <a href="https://trex-runner.com">Game Fora Do Ar. BRUNO MALDITO</a> -->
-                <div class="gameMenu">
+                <!-- <div class="gameMenu">
                     <button><img src="../../images/fullscreen.svg" alt="Botão full screen"></button>
                     <button>
                         <img src="../../images/trofeu.svg" alt="">
                         Ranking
-                    </button>
+                    </button> -->
                 </div>
             </div>
 
@@ -92,25 +92,33 @@
               <p class="titulo"></p>
             </div>
             <ul class="caixaOpcoes" type="none">
-              <li class="opcao">
-                <input class="inputRadio" type="radio" name="optionsSelect" value="0">
-                <p>a) </p>
+              <input class="inputRadio" type="radio" name="optionsSelect" value="0" id="a">
+              <li for="a" class="opcao">
+                <p class="op">A) </p>
+                <label for="a">
                 <p class="descricao"></p>
+              </label>
               </li>
-              <li class="opcao">
-                <input class="inputRadio" type="radio" name="optionsSelect" value="1">
-                <p>b) </p>
+              <input class="inputRadio" type="radio" name="optionsSelect" value="1" id="b">
+              <li for="b" class="opcao">
+                <p class="op">B) </p>
+                <label for="b">
                 <p class="descricao"></p>
+              </label>
               </li>
-              <li class="opcao">
-                <input class="inputRadio" type="radio" name="optionsSelect" value="2">
-                <p>c) </p>
+              <input class="inputRadio" type="radio" name="optionsSelect" value="2" id="c">
+              <li for="c" class="opcao">
+                <p class="op">C) </p>
+                <label for="c">
                 <p class="descricao"></p>
-              </li>
-              <li class="opcao">
-                <input class="inputRadio" type="radio" name="optionsSelect" value="3">
-                <p>d) </p>
+              </label>
+              </li>              
+              <input class="inputRadio" type="radio" name="optionsSelect" value="3" id="d">
+              <li for="d" class="opcao">
+                <p class="op">D)</p>
+                <label for="d">
                 <p class="descricao"></p>
+              </label>
               </li>
             </ul>
             <div class="buttonContainer">

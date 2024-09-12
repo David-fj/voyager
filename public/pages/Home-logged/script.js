@@ -34,6 +34,7 @@ deslogar.addEventListener('click', event => {
         if (result.isConfirmed) {
             localStorage.setItem("isLoggedIn", "false")
             localStorage.setItem("userName", "")
+            localStorage.setItem('idUser', "");
             window.location.href = "../login/login.html"
         }
     });
@@ -125,60 +126,19 @@ document.addEventListener('DOMContentLoaded', async () => {
       
       const tableBody = document.querySelector('#pontuacaoTodos tbody');
       tableBody.innerHTML = ''; // Limpa o conteúdo existente
-
-      data.forEach(item => {
-        const row = document.createElement('tr');
-        row.innerHTML += `
-          <td>${item.entryCount + 1}</td>
+      
+      data.forEach((item, i) => {
+        let c = i + 1;
+        const linha = `
+        <tr>
+          <td>${c }</td>
           <td>${item.userName}</td>
           <td>${item.totalScore}</td>
-        `;
-        tableBody.appendChild(row);
+          </tr>
+          `
+        tableBody.innerHTML += linha;
       });
     } catch (error) {
       console.error('Erro ao carregar pontuações:', error);
     }
   });
-
-  document.addEventListener('DOMContentLoaded', async () => {
-    try {
-      const response = await fetch('/api/scores');
-      const data = await response.json();
-      console.log(data)
-      
-      const tableBody = document.querySelector('#pontuacaoTodos tbody');
-      tableBody.innerHTML = ''; // Limpa o conteúdo existente
-
-      data.forEach(item => {
-        const row = document.createElement('tr');
-        row.innerHTML += `
-          <td>${item.entryCount + 1}</td>
-          <td>${item.userName}</td>
-          <td>${item.totalScore}</td>
-        `;
-        tableBody.appendChild(row);
-      });
-    } catch (error) {
-      console.error('Erro ao carregar pontuações:', error);
-    }
-  });
-
-  document.addEventListener('DOMContentLoaded', async () => {
-    const logged = localStorage.getItem('isLoggedIn');
-  
-    try {
-      const response = await fetch(`/api/getUserScore?userId=${userId}`);
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      const data = await response.json();
-      
-      console.log(data);
-      
-      document.getElementById('userName').textContent = data.name;
-      document.getElementById('userScore').textContent = data.totalScore;
-    } catch (error) {
-      console.error('Erro ao carregar pontuações:', error);
-    }
-  });
-  

@@ -170,23 +170,79 @@ function updateGame() {
         if(!respondido){
             if(valor != -1){
                 if(pergunta.alter != valor) {
-                    lis[valor].classList.add('vermelho');
+                    lis[valor].setAttribute('id', 'vermelho');
                     erro = true;
                 }
-            lis[pergunta.alter].classList.add('verde');
+            lis[pergunta.alter].setAttribute('id','verde');
             button.innerHTML = "Continuar";
             respondido = true;
+            console.log(pontuacao)
             }
         }else {
             desmarcarTodos();
             if(erro){
-                lis[valor].classList.remove('vermelho'); 
+                lis[valor].removeAttribute('id', 'vermelho'); 
             }
-            lis[pergunta.alter].classList.remove('verde');
+            lis[pergunta.alter].removeAttribute('id', 'verde');
             respondido = false;
             pass = false;
             button.innerHTML = "Responder"
             popUp.style.display = "none";
+
+            async function saveScore(score) {
+              const userId = localStorage.getItem('idUser'); // Supondo que você já tenha o userId armazenado no localStorage
+            
+              const response = await fetch('/api/save-score', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({ userId, score })
+              });
+            
+              const result = await response.json();
+            
+              if (response.ok) {
+                  console.log(result);
+              } else {
+                  console.error('Erro ao salvar a pontuação:', result.error);
+              }
+            }
+            
+            function confirmSaveScore(score) {
+              const userId = localStorage.getItem('idUser');
+              if ( userId === "" ){
+                Swal.fire('Não salvo!', 'Sua pontuação não foi salva, faça login para salvar', 'info');
+              } else{
+              Swal.fire({
+                title: 'Você deseja salvar sua pontuação?',
+                text: `Sua pontuação é ${score}.`,
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'Sim, salvar!',
+                cancelButtonText: 'Não, cancelar',
+                reverseButtons: true
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  Swal.fire('Salvo', 'Sua pontuação foi salva', 'info');
+                  saveScore(score);
+                } else if (result.dismiss === Swal.DismissReason.cancel) {
+                  Swal.fire('Cancelado', 'Sua pontuação não foi salva', 'info');
+                }
+              });
+              }
+            }
+          
+            // Exemplo de uso:
+            // Chame essa função com a pontuação que deseja salvar
+            let gameScore = score;
+            if ( erro === false){
+              gameScore = gameScore + 10
+            }
+            // saveScore(gameScore)
+            confirmSaveScore(gameScore);
+
+            // Exemplo de uso: salvar a pontuação após o jogo
             resetGame();
         }
     }
@@ -228,3 +284,9 @@ window.addEventListener('keydown', function (e) {
       updateGame();
     }
 });
+
+console.log(pontuacao)
+
+// Inserir pontuacao
+
+

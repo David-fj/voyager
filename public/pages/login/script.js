@@ -68,6 +68,7 @@ document.getElementById('registerForm').addEventListener('submit', async (event)
 
         localStorage.setItem('isLoggedIn', 'true');
         localStorage.setItem('userName', name);
+        localStorage.setItem('idUser', result.id);
         window.location.href = "../Home-logged/index.html";
         
       } else {
@@ -139,8 +140,7 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
     if (result.success) {
       Swal.fire({
         position: 'top-end',
-        icon: 'sucess',
-        background: '#115575',
+        icon: 'success',
         showConfirmButton: false,
         timer: 1000
   });
@@ -148,13 +148,13 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
 
       localStorage.setItem('isLoggedIn', 'true');
       localStorage.setItem('userName', result.name);
+      localStorage.setItem('idUser', result.userId);
     } else if ( result.error === 'ETIMEDOUT'  ){
       Swal.fire({
       title: 'Servidor fora do ar!',
       text: "Você deseja logar em uma conta Teste?",
       icon: 'warning',
       showCancelButton: true,
-      background: '#115575',
       color: '#fff',
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
@@ -172,7 +172,6 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
       position: 'top-end',
       title: 'Email ou senha incorretos!',
       icon: 'error',
-      background: '#115575',
       color: '#fff',
       showConfirmButton: false,
       timer: 1000

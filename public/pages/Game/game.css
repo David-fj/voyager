@@ -17,7 +17,7 @@ color: var(--text-logo-color);
 --color-bk: #141a23;
 --green-blue-darker: #061e29;
 --cad-main-bk: #115575;
---podio-background: #06090d;
+--podio-background: #45283C;
 --light-active: #B5CAD4;
 --menu-color: rgb(0, 0, 0, 74%);
 --background-padrao: #585858;
@@ -32,7 +32,7 @@ html{
 
 body {
     height: 100svh;
-    background-color: var(--podio-background);
+    background: var(--borda-sla);
 }
   
 header {
@@ -151,12 +151,7 @@ main {
 
 /*Da Pagina*/
 
-body {
-    background: var(--background-padrao);
-    height: 100%;
-}
-
-.gameMenu {
+/* .gameMenu {
     background-color: var(--menu-color);
     width: 960px;
     height: 4.813rem;
@@ -173,27 +168,30 @@ body {
     gap: 0.3rem;
     margin-left: 1rem;
     margin-right: 1rem;
-}
+} */
 
 .caixaGame{
-    background-color: var(--background-game);
+    background-color: var();
     width: 960px;
     height: 540px;
     margin-top: 4.625rem;
+    padding-bottom: 4.625rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background: var(--borda-sla);
 }
 
 canvas {
-    border: 2px solid #000;
+    /* border: 2px solid #000; */
     background-color: #45283c;
     width: 960px;
-    height: 480px;
+    height: 100%;
     /* width: 800px;
     height: 200px; */
     position: inherit;
+    border-radius: 0.25rem;
 }
 
 .pontuacao {
@@ -242,6 +240,38 @@ canvas {
 
 .caixaOpcoes li {
     margin: 0.25rem 0;
+    width: 80%;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.caixaOpcoes li:hover{
+    background: var(--color-bk);
+}
+
+.caixaOpcoes input[type="radio"]{
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+label{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 0.75rem;
+}
+
+/* .caixaOpcoes input[type="radio"]{
+    -webkit-appearance: none;
+    appearance: none;
+} */
+
+.caixaOpcoes input:checked + li{
+    background: var(--color-bk);
+}
+
+.caixaOpcoes .op{
+    padding-left: 0.25rem;
 }
 
 .buttonContainer {
@@ -259,17 +289,16 @@ canvas {
     border-radius: 0.25rem
 }
 
-.vermelho {
+#vermelho {
     background-color: red;
 }
 
-.verde {
+#verde {
     background-color: green;
 }
 /* FOOTER */
 
 footer {
-    margin-top: 4.7625rem;
     display: flex;
     flex-direction: row;
     align-items: center;

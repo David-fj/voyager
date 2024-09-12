@@ -7,6 +7,7 @@ const getUsersWithScores = async () => {
     try {
       const results = await sequelize.query(`
         SELECT 
+          MAX(Runs.createdAt),
           COUNT(Runs.id) AS entryCount, 
           Users.name AS userName, 
           MAX(Runs.pontuacao) AS totalScore

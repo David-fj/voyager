@@ -10,7 +10,6 @@ deslogar.addEventListener('click', event => {
         text: "Você deseja realmente deslogar?",
         icon: 'warning',
         showCancelButton: true,
-        background: '#115575',
         color: '#fff',
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
@@ -21,6 +20,7 @@ deslogar.addEventListener('click', event => {
             window.location.href = "../login/login.html"
             localStorage.setItem("isLoggedIn", "false")
             localStorage.setItem("userName", "")
+            localStorage.setItem('idUser', "");
         }
     });
 });

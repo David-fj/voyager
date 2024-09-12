@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { User } = require('../models');
+const { User, Runs } = require('../models');
 const { getUsersWithScores } = require('../code/tableLogin')
 const bcrypt = require('bcryptjs');
 
@@ -46,7 +46,7 @@ router.post('/login', async (req, res) => {
     if (!isPasswordValid) {
     return res.status(401).json({ error: 'Senha incorreta' });
   }
-  res.status(200).json({ success: true, name: user.name });
+  res.status(200).json({ success: true, userId: user.id, name: user.name });
   
 
 } catch (error) {
@@ -101,5 +101,32 @@ router.get('/scores', async (req, res) => {
     res.status(500).json({ error: 'Erro interno do servidor' });
   }
 });
+
+// Add run
+
+router.post('/save-score', async (req, res) => {
+    const { userId, score } = req.body; // Receba o userId e a pontuação do front-end
+
+    try {
+        // Verifique se o usuário e a pontuação foram fornecidos
+        if (!userId || !score) {
+            return res.status(400).json({ error: 'User ID e score são obrigatórios.' });
+        }
+
+        // Salve a pontuação no banco de dados
+        const newScore = await Runs.create({
+            iduser: userId,
+            pontuacao: score
+        });
+
+        res.status(201).json({ message: 'Pontuação salva com sucesso!', score: newScore });
+    } catch (error) {
+        console.error('Erro ao salvar a pontuação:', error);
+        res.status(500).json({ error: 'Erro interno do servidor.' });
+    }
+});
+
+module.exports = router;
+
 
 module.exports = router;
