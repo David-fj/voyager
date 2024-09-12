@@ -62,6 +62,13 @@ const aulaCos = document.querySelectorAll(".cosmologia li");
 const aulaSis = document.querySelectorAll(".sistema li");
 
 const aulaEstrelas = document.querySelectorAll(".estrelas li");
+
+const aulaGalaxia = document.querySelectorAll(".galaxia li");
+
+const aulaExoplanetas = document.querySelectorAll(".exoplanetas li");
+
+const aulaInstrumentacaoAstronomica = document.querySelectorAll(".instrumentacao li");
+
 const iframe = document.querySelector("iframe")
 
 function buscarOsTemas() {
@@ -92,6 +99,42 @@ function buscarOsTemas() {
               const elementoClicado = event.target;
               const clickArray = Array.from(aulaEstrelas).indexOf(elementoClicado);
               iframe.src = `${data.Estrelas[clickArray]}`
+              console.log(elementoClicado, clickArray)
+            })
+          })
+
+          aulaGalaxia.forEach(aula => {
+            aula.addEventListener('click', (event) => {
+              const elementoClicado = event.target;
+              const clickArray = Array.from(aulaGalaxia).indexOf(elementoClicado);
+              iframe.src = `${data.Galaxias[clickArray]}`
+              console.log(elementoClicado, clickArray)
+            })
+          })
+
+          aulaGalaxia.forEach(aula => {
+            aula.addEventListener('click', (event) => {
+              const elementoClicado = event.target;
+              const clickArray = Array.from(aulaGalaxia).indexOf(elementoClicado);
+              iframe.src = `${data.Galaxias[clickArray]}`
+              console.log(elementoClicado, clickArray)
+            })
+          })
+
+          aulaExoplanetas.forEach(aula => {
+            aula.addEventListener('click', (event) => {
+              const elementoClicado = event.target;
+              const clickArray = Array.from(aulaExoplanetas).indexOf(elementoClicado);
+              iframe.src = `${data.Exoplanetas[clickArray]}`
+              console.log(elementoClicado, clickArray)
+            })
+          })
+
+          aulaInstrumentacaoAstronomica.forEach(aula => {
+            aula.addEventListener('click', (event) => {
+              const elementoClicado = event.target;
+              const clickArray = Array.from(aulaInstrumentacaoAstronomica).indexOf(elementoClicado);
+              iframe.src = `${data.InstrumentacaoAstronomica[clickArray]}`
               console.log(elementoClicado, clickArray)
             })
           })
