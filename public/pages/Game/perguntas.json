@@ -4,109 +4,127 @@
         "topic": "Cosmologia",
         "question": "O que o modelo do Big Bang descreve?",
         "options": ["A formação dos planetas", "A origem do universo", "A criação das estrelas", "A expansão da Via Láctea"],
-        "answer": "A origem do universo"
+        "answer": "A origem do universo",
+        "alter": 1
       },
       {
         "topic": "Cosmologia",
         "question": "Qual é o principal componente da matéria escura?",
         "options": ["Átomos", "Elétrons", "Partículas subatômicas", "Ainda é desconhecido"],
-        "answer": "Ainda é desconhecido"
+        "answer": "Ainda é desconhecido",
+        "alter": 3
       },
       {
         "topic": "Cosmologia",
         "question": "O que é a radiação cósmica de fundo em micro-ondas?",
         "options": ["Radiação emitida pelas estrelas", "Sinal de rádio das galáxias", "Ecos do Big Bang", "Reflexos da luz solar"],
-        "answer": "Ecos do Big Bang"
+        "answer": "Ecos do Big Bang",
+        "alter": 2
       },
       {
         "topic": "Sistema Solar",
         "question": "Quantos planetas compõem o Sistema Solar?",
         "options": ["7", "8", "9", "10"],
-        "answer": "8"
+        "answer": "8",
+        "alter": 1
       },
       {
         "topic": "Sistema Solar",
         "question": "Qual planeta é conhecido como o Planeta Vermelho?",
         "options": ["Vênus", "Marte", "Mercúrio", "Júpiter"],
-        "answer": "Marte"
+        "answer": "Marte",
+        "alter": 1
       },
       {
         "topic": "Sistema Solar",
         "question": "Qual planeta tem os ventos mais rápidos do Sistema Solar?",
         "options": ["Saturno", "Netuno", "Urano", "Júpiter"],
-        "answer": "Netuno"
+        "answer": "Netuno",
+        "alter": 1
       },
       {
         "topic": "Estrelas e Evolução Estrelar",
         "question": "Como é chamada a explosão de uma estrela de grande massa?",
         "options": ["Nova", "Supernova", "Nebulosa", "Gigante Vermelha"],
-        "answer": "Supernova"
+        "answer": "Supernova",
+        "alter": 1
       },
       {
         "topic": "Estrelas e Evolução Estrelar",
         "question": "O que é uma anã branca?",
         "options": ["Um buraco negro em formação", "O núcleo remanescente de uma estrela morta", "Uma estrela jovem", "Uma estrela de grande massa"],
-        "answer": "O núcleo remanescente de uma estrela morta"
+        "answer": "O núcleo remanescente de uma estrela morta",
+        "alter": 1
       },
       {
         "topic": "Estrelas e Evolução Estrelar",
         "question": "Qual é a fase final de uma estrela de baixa massa?",
         "options": ["Supernova", "Gigante Vermelha", "Buraco Negro", "Anã Branca"],
-        "answer": "Anã Branca"
+        "answer": "Anã Branca",
+        "alter": 3
       },
       {
         "topic": "Estrutura Galática",
         "question": "Qual é o nome do aglomerado de galáxias onde a Via Láctea está localizada?",
         "options": ["Grupo Local", "Virgo Cluster", "Hercules Cluster", "Coma Cluster"],
-        "answer": "Grupo Local"
+        "answer": "Grupo Local",
+        "alter": 0
       },
       {
         "topic": "Estrutura Galática",
         "question": "Quantos braços espirais principais a Via Láctea possui?",
         "options": ["2", "3", "4", "5"],
-        "answer": "4"
+        "answer": "4",
+        "alter": 2
       },
       {
         "topic": "Estrutura Galática",
         "question": "O que é o halo galáctico?",
         "options": ["Uma formação de nuvens de gás", "Uma região com poucas estrelas", "Uma área de formação de novas estrelas", "Uma área esférica que circunda a galáxia"],
-        "answer": "Uma área esférica que circunda a galáxia"
+        "answer": "Uma área esférica que circunda a galáxia",
+        "alter": 3
       },
       {
         "topic": "Exoplanetas",
         "question": "O que é um exoplaneta?",
         "options": ["Um planeta fora do Sistema Solar", "Um planeta anão", "Um satélite natural", "Um asteroide"],
-        "answer": "Um planeta fora do Sistema Solar"
+        "answer": "Um planeta fora do Sistema Solar",
+        "alter": 0
       },
       {
         "topic": "Exoplanetas",
         "question": "O que é a zona habitável em torno de uma estrela?",
         "options": ["Área onde a água pode existir em estado líquido", "Região onde planetas podem se formar", "Área mais distante da estrela", "Área mais próxima da estrela"],
-        "answer": "Área onde a água pode existir em estado líquido"
+        "answer": "Área onde a água pode existir em estado líquido",
+        "alter": 0
       },
       {
         "topic": "Exoplanetas",
         "question": "Qual foi o primeiro método utilizado para detectar exoplanetas?",
         "options": ["Imagem direta", "Trânsito", "Velocidade radial", "Microlente gravitacional"],
-        "answer": "Velocidade radial"
+        "answer": "Velocidade radial",
+        "alter": 2
       },
       {
         "topic": "Instrumentos da Astronomia",
         "question": "Qual é a principal função de um radiotelescópio?",
         "options": ["Observar luz visível", "Observar ondas de rádio", "Mapear a superfície lunar", "Observar a radiação ultravioleta"],
-        "answer": "Observar ondas de rádio"
+        "answer": "Observar ondas de rádio",
+        "alter": 1
       },
       {
         "topic": "Instrumentos da Astronomia",
         "question": "Qual é o nome do telescópio que foi lançado em 1990 e revolucionou a astronomia?",
         "options": ["James Webb", "Hubble", "Kepler", "Chandra"],
-        "answer": "Hubble"
+        "answer": "Hubble",
+        "alter": 1
       },
       {
         "topic": "Instrumentos da Astronomia",
         "question": "O que são interferômetros usados na astronomia?",
         "options": ["Dispositivos que amplificam a luz", "Telescópios que capturam luz infravermelha", "Instrumentos que combinam sinais de vários telescópios", "Sensores que detectam partículas cósmicas"],
-        "answer": "Instrumentos que combinam sinais de vários telescópios"
+        "answer": "Instrumentos que combinam sinais de vários telescópios",
+        "alter": 2
       }
     ]
   }
