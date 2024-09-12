@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { User } = require('../models');
+const { getUsersWithScores } = require('../code/tableLogin')
 const bcrypt = require('bcryptjs');
 
 // Rota - novo usuário
@@ -50,10 +51,55 @@ router.post('/login', async (req, res) => {
 
 } catch (error) {
   console.error('Erro ao fazer login:', error);
-  res.status(500).json({ error: 'Erro interno do servidor' });
+  res.status(500).json({ error: error.original.code });
 }
 
 });
 
+router.get('/scores', async (req, res) => {
+  try {
+    const scores = await getUsersWithScores();
+    res.json(scores);
+  } catch (error) {
+    console.error('Erro ao buscar pontuações:', error);
+    res.status(500).json({ error: 'Erro interno do servidor' });
+  }
+});
+ // Tabela
+
+ router.get('/api/getUserScore', async (req, res) => {
+  const userId = req.query.userId; // Obtenha o userId da query string ou do token
+
+  if (!userId) {
+    return res.status(400).json({ error: 'Usuário não fornecido' });
+  }
+
+  try {
+    const userWithScores = await User.findOne({
+      attributes: [
+        'id',
+        'name',
+        [sequelize.fn('MAX', sequelize.col('runs.pontuacao')), 'totalScore'],
+      ],
+      include: [
+        {
+          model: Run,
+          attributes: [],
+        },
+      ],
+      where: { id: userId },
+      group: ['User.id'],
+    });
+
+    if (userWithScores) {
+      res.json(userWithScores);
+    } else {
+      res.status(404).json({ error: 'Usuário não encontrado' });
+    }
+  } catch (error) {
+    console.error('Erro ao buscar dados do usuário:', error);
+    res.status(500).json({ error: 'Erro interno do servidor' });
+  }
+});
 
 module.exports = router;

@@ -3,7 +3,7 @@
       "username": "edutec",
       "password": "SDqzIqe0",
       "database": "voyagerdb",
-      "host": "186.203.29.95",
+      "host": "192.168.1.27",
       "port": 3306,
       "dialect": "mysql"
     },
@@ -11,7 +11,7 @@
       "username": "edutec",
       "password": "SDqzIqe0",
       "database": "voyagerdb",
-      "host": "186.203.29.95",
+      "host": "179.250.0.200",
       "port": 3306,
       "dialect": "mysql"
     },
@@ -19,7 +19,7 @@
       "username": "edutec",
       "password": "SDqzIqe0",
       "database": "voyagerdb",
-      "host": "186.203.29.95",
+      "host": "179.250.0.200",
       "port": 3306,
       "dialect": "mysql"
     }

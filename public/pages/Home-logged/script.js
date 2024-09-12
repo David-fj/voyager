@@ -16,13 +16,28 @@ const logoLink = document.querySelector(".navList a");
 const logar = document.querySelector(".logar");
 const deslogar = document.querySelector(".deslogar");
 
-deslogar.addEventListener("click", () => {
-    if( localStorage.getItem("isLoggedIn") == "true" ) {
-        window.location.href = "../login/login.html"
-        localStorage.setItem("isLoggedIn", "false")
-        localStorage.setItem("userName", "")
-    }
-})
+deslogar.addEventListener('click', event => {
+    event.preventDefault(); // Evita que o logout seja realizado imediatamente
+
+    Swal.fire({
+        title: 'Tem certeza?',
+        text: "Você deseja realmente deslogar?",
+        icon: 'warning',
+        showCancelButton: true,
+        background: '#115575',
+        color: '#fff',
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sim, deslogar',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            localStorage.setItem("isLoggedIn", "false")
+            localStorage.setItem("userName", "")
+            window.location.href = "../login/login.html"
+        }
+    });
+});
 
 logar.addEventListener("click", () => {
     if( localStorage.getItem("isLoggedIn") == "false" ) {
@@ -99,3 +114,71 @@ function moveSlide(step) {
 document.querySelector('.prev').addEventListener('click', () => moveSlide(-1));
 document.querySelector('.next').addEventListener('click', () => moveSlide(1));
 
+
+/*Tabela*/
+
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+      const response = await fetch('/api/scores');
+      const data = await response.json();
+      console.log(data)
+      
+      const tableBody = document.querySelector('#pontuacaoTodos tbody');
+      tableBody.innerHTML = ''; // Limpa o conteúdo existente
+
+      data.forEach(item => {
+        const row = document.createElement('tr');
+        row.innerHTML += `
+          <td>${item.entryCount + 1}</td>
+          <td>${item.userName}</td>
+          <td>${item.totalScore}</td>
+        `;
+        tableBody.appendChild(row);
+      });
+    } catch (error) {
+      console.error('Erro ao carregar pontuações:', error);
+    }
+  });
+
+  document.addEventListener('DOMContentLoaded', async () => {
+    try {
+      const response = await fetch('/api/scores');
+      const data = await response.json();
+      console.log(data)
+      
+      const tableBody = document.querySelector('#pontuacaoTodos tbody');
+      tableBody.innerHTML = ''; // Limpa o conteúdo existente
+
+      data.forEach(item => {
+        const row = document.createElement('tr');
+        row.innerHTML += `
+          <td>${item.entryCount + 1}</td>
+          <td>${item.userName}</td>
+          <td>${item.totalScore}</td>
+        `;
+        tableBody.appendChild(row);
+      });
+    } catch (error) {
+      console.error('Erro ao carregar pontuações:', error);
+    }
+  });
+
+  document.addEventListener('DOMContentLoaded', async () => {
+    const logged = localStorage.getItem('isLoggedIn');
+  
+    try {
+      const response = await fetch(`/api/getUserScore?userId=${userId}`);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.json();
+      
+      console.log(data);
+      
+      document.getElementById('userName').textContent = data.name;
+      document.getElementById('userScore').textContent = data.totalScore;
+    } catch (error) {
+      console.error('Erro ao carregar pontuações:', error);
+    }
+  });
+  
