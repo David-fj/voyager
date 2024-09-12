@@ -71,17 +71,20 @@ const aulaInstrumentacaoAstronomica = document.querySelectorAll(".instrumentacao
 
 const iframe = document.querySelector("iframe")
 
+const resumo = document.querySelector(".videozao p")
+
 function buscarOsTemas() {
   fetch('data.json')          //Buscar o .json
       .then(response => response.json())          // se achar o .json pega a resposta
-      .then(data => {         //se a resposta for data (porque não vai vim data.json e sim data) ele segue
-          console.log(data.Cosmologia)
+      .then(data => {
           aulaCos.forEach(aula => {
             aula.addEventListener('click', (event) => {
               const elementoClicado = event.target;
               const clickArray = Array.from(aulaCos).indexOf(elementoClicado);
               iframe.src = `${data.Cosmologia[clickArray]}`
+              resumo.innerText = data.Textocos
               console.log(elementoClicado, clickArray)
+
             })
           })
           
@@ -90,6 +93,7 @@ function buscarOsTemas() {
               const elementoClicado = event.target;
               const clickArray = Array.from(aulaSis).indexOf(elementoClicado);
               iframe.src = `${data.SistemaSolar[clickArray]}`
+              resumo.innerText = data.Textosis
               console.log(elementoClicado, clickArray)
             })
           })
@@ -99,6 +103,7 @@ function buscarOsTemas() {
               const elementoClicado = event.target;
               const clickArray = Array.from(aulaEstrelas).indexOf(elementoClicado);
               iframe.src = `${data.Estrelas[clickArray]}`
+              resumo.innerText = data.Textoestrelas
               console.log(elementoClicado, clickArray)
             })
           })
@@ -108,24 +113,27 @@ function buscarOsTemas() {
               const elementoClicado = event.target;
               const clickArray = Array.from(aulaGalaxia).indexOf(elementoClicado);
               iframe.src = `${data.Galaxias[clickArray]}`
+              resumo.innerText = data.Textogal
               console.log(elementoClicado, clickArray)
             })
           })
 
-          aulaGalaxia.forEach(aula => {
-            aula.addEventListener('click', (event) => {
-              const elementoClicado = event.target;
-              const clickArray = Array.from(aulaGalaxia).indexOf(elementoClicado);
-              iframe.src = `${data.Galaxias[clickArray]}`
-              console.log(elementoClicado, clickArray)
-            })
-          })
+          // aulaGalaxia.forEach(aula => {
+          //   aula.addEventListener('click', (event) => {
+          //     const elementoClicado = event.target;
+          //     const clickArray = Array.from(aulaGalaxia).indexOf(elementoClicado);
+          //     iframe.src = `${data.Galaxias[clickArray]}`
+          //     resumo.innerText = data.Textogalaxia
+          //     console.log(elementoClicado, clickArray)
+          //   })
+          // })
 
           aulaExoplanetas.forEach(aula => {
             aula.addEventListener('click', (event) => {
               const elementoClicado = event.target;
               const clickArray = Array.from(aulaExoplanetas).indexOf(elementoClicado);
               iframe.src = `${data.Exoplanetas[clickArray]}`
+              resumo.innerText = data.Textoexo
               console.log(elementoClicado, clickArray)
             })
           })
@@ -135,6 +143,7 @@ function buscarOsTemas() {
               const elementoClicado = event.target;
               const clickArray = Array.from(aulaInstrumentacaoAstronomica).indexOf(elementoClicado);
               iframe.src = `${data.InstrumentacaoAstronomica[clickArray]}`
+              resumo.innerText = data.Textoinstru
               console.log(elementoClicado, clickArray)
             })
           })

@@ -6,6 +6,7 @@
       "https://www.youtube.com/embed/nkY3cMIFNn8?si=ySfz-ZxaoHjedcjm",
       "https://www.youtube.com/embed/IFZREuiy6q8?si=oLrMtrmqDq0hgraW"
     ],
+    "Textocos": "Cosmologia é o estudo do universo como um todo, incluindo sua origem, evolução, estrutura, dinâmica e destino final. Ela busca entender como o universo começou (como no Big Bang), como ele evolui ao longo do tempo, a natureza da matéria escura e da energia escura, e como ele poderá terminar. Questões fundamentais da cosmologia envolvem a expansão do universo, a formação de galáxias e estrelas, e a investigação das leis físicas que governam o cosmos.",
     "SistemaSolar": [
       "https://www.youtube.com/embed/SpcPB_lzCxc?si=CvBnBKE-tWZZ4ugP",
       "https://www.youtube.com/embed/tBLLuZvuyYw?si=Dban4pljj3rD7GT9",
@@ -13,6 +14,7 @@
       "https://www.youtube.com/embed/0krL4L_6Gkw?si=bd-_--DNHyB68Fte",
       "https://www.youtube.com/embed/uKSy8Yan9tw?si=doa2WGGBysAvwpti"
     ],
+    "Textosis": "O Sistema Solar é composto pelo Sol e todos os corpos celestes que orbitam ao seu redor, incluindo planetas, luas, asteroides, cometas e meteoroides. Os oito planetas principais (Mercúrio, Vênus, Terra, Marte, Júpiter, Saturno, Urano e Netuno) orbitam o Sol em trajetórias elípticas. Além disso, o Sistema Solar possui a Cintura de Asteroides, entre Marte e Júpiter, e a Cintura de Kuiper, uma região além de Netuno que contém muitos objetos gelados, incluindo Plutão.",
     "Estrelas": [
       "https://www.youtube.com/embed/1wPSGIV84aI?si=1brwAwiiQCZYSVTm",
       "https://www.youtube.com/embed/1wPSGIV84aI?si=dKFyMuAkpW7elbYp",
@@ -20,17 +22,22 @@
       "https://www.youtube.com/embed/_k53XNWFnGc?si=KaSQc1FlDVrcF752",
       "https://www.youtube.com/embed/BPKAdgv6XUM?si=dXF5laZJZ5yYHJcY"
     ],
+    "Textoestrelas": "Estrelas são corpos celestes que produzem luz e calor através da fusão nuclear em seus núcleos, onde elementos leves, como o hidrogênio, são convertidos em elementos mais pesados, como o hélio. A evolução estrelar refere-se ao ciclo de vida das estrelas, desde o seu nascimento em nebulosas até sua morte, que pode resultar em anãs brancas, estrelas de nêutrons ou buracos negros. A massa da estrela determina seu destino final e sua vida útil.",
     "Galaxias": [
       "https://www.youtube.com/embed/wqqSfP8lspU?si=eiooHxZ0zx7alefE",
       "https://www.youtube.com/embed/OKVQZWyCau4?si=N2rRcq4RU-xntg-z",
       "https://www.youtube.com/embed/31GIiHxtfvg?si=Lny9rg5P5X-6YEnA",
       "https://www.youtube.com/embed/RAcj7TieaPQ?si=9LeJC3Lv5l6Xfk2N"
     ],
+    "Textogal": "A estrutura galática refere-se à forma e composição das galáxias, que são grandes sistemas de estrelas, gás, poeira e matéria escura, ligados pela gravidade. A nossa galáxia, a Via Láctea, é uma galáxia espiral com um núcleo central, braços espirais e um halo de estrelas e matéria escura ao redor. A estrutura galática estuda como essas diferentes componentes se formam, interagem e evoluem ao longo do tempo.",
     "Exoplanetas": [
       "https://www.youtube.com/embed/MwqitEBylNY?si=SHPJvC9l5MGirnlb"
     ],
+    "Textoexo": "Exoplanetas são planetas que orbitam estrelas fora do nosso Sistema Solar. A descoberta de exoplanetas é um campo de pesquisa muito ativo, com o objetivo de encontrar planetas que possam abrigar vida. As técnicas usadas para detectar exoplanetas incluem o método de trânsito, onde a passagem de um planeta na frente de sua estrela faz com que a luminosidade da estrela diminua ligeiramente, e o método da velocidade radial, que mede o 'bamboleio' da estrela causado pela gravidade do planeta.",
+
     "InstrumentacaoAstronomica": [
       "https://www.youtube.com/embed/FG215URhvhQ?si=l-LykSiJyRpv2jBR",
       "https://www.youtube.com/embed/8eGZzxWW6IM?si=lgro73WmR9S-YQTz"
-    ]
+    ],
+    "Textoinstru": "Os instrumentos na astronomia são ferramentas utilizadas para observar e estudar o universo. Telescópios ópticos, radiotelescópios, telescópios espaciais como o Hubble, e sondas espaciais são alguns dos instrumentos mais comuns. Além de observar a luz visível, esses instrumentos podem captar outras formas de radiação, como raios X, infravermelho, e ondas de rádio, permitindo uma visão mais abrangente do universo. Equipamentos de análise de dados, espectrômetros, e interferômetros também desempenham um papel crucial na coleta e interpretação de dados astronômicos."
   }
