@@ -9,6 +9,7 @@ deslogar.addEventListener('click', event => {
         title: 'Tem certeza?',
         text: "Você deseja realmente deslogar?",
         icon: 'warning',
+        background: "#000",
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
