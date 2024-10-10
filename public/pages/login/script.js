@@ -30,123 +30,6 @@ cadastro.addEventListener("click", mudarParaCadastro)
 
 // CADASTRO
 
-// document.querySelector('#registerForm button').addEventListener('click', async (ev) => {
-//   ev.preventDefault();
-//   const submitButton = document.querySelector("#registerForm button");
-//   submitButton.disabled = true;
-//   submitButton.textContent = "Carregando...";
-
-//   const popUp = document.querySelector('.popUpVerification')
-//   popUp.style.display = 'block'
-
-//   const email = document.getElementById('email').value;
-
-//   const response = await fetch('/api/confirm', {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify({ email })
-//   });
-//   console.log(response.ok)
-
-// });
-// // document.getElementById('registerForm').addEventListener('submit', async (event) => {
-// document.getElementById('inputs').addEventListener('submit', async (event) => {
-//   event.preventDefault();
-//   console.log("olaaaa")
-//   let cod = '';
-  
-
-//     const button = document.querySelector(".submit")
-//     button.addEventListener('click', event => {
-//       const inputForCode = document.querySelectorAll(".input")
-//       let valor;
-//         for (let i = 1; i <= inputForCode.length; i++) {
-//           valor = inputForCode[i - 1].value.toString();
-//           cod += valor
-//         }
-//     })
-  
-//     const name = document.getElementById('nome').value;
-//     const email = document.getElementById('email').value;
-//     const senha = document.getElementById('senha').value;
-//     const conSenha = document.getElementById('consenha').value;
-//     const inputs = document.querySelectorAll("#registerForm input");
-//     const submitButton = document.querySelector("#registerForm button");
-
-//     if( senha === conSenha ){
-
-//     try {
-//       const response = await fetch('/api/register', {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify({ name, email, senha, cod })
-//       });
-  
-//       if (response.ok) {
-//         const result = await response.json();
-//         Swal.fire({
-//           position: 'top-end',
-//           text: `Usuário cadastrado com sucesso!`,
-//           background: '#3085d6',
-//           color: '#fff',
-//           showConfirmButton: false,
-//           timer: 1700
-//     });
-
-//         localStorage.setItem('isLoggedIn', 'true');
-//         localStorage.setItem('userName', name);
-//         localStorage.setItem('idUser', result.id);
-//         window.location.href = "../Home-logged/index.html";
-        
-//       } else {
-//         const error = await response.json();
-//         inputs.forEach(input => {
-//           input.className = "errado"
-//         });
-//         Swal.fire({
-//           position: 'top-end',
-//           text: `Erro ${error.error}`,
-//           background: '#ee5454',
-//           color: '#fff',
-//           showConfirmButton: false,
-//           timer: 1700
-//     });
-//       }
-//     } catch (error) {
-//       console.error('Erro ao fazer a requisição:', error);
-//       Swal.fire({
-//         position: 'top-end',
-//         text: 'Erro ao cadastrar usuário!',
-//         background: '#ee5454',
-//         color: '#fff',
-//         showConfirmButton: false,
-//         timer: 1700
-//   });
-//     } finally {
-//       submitButton.disabled = false;
-//       submitButton.textContent = "Cadastrar";
-//     }
-//     } else {
-//       Swal.fire({
-//         position: 'top-end',
-//         text: 'Cadastro incorreto!',
-//         background: '#ee5454',
-//         color: '#fff',
-//         showConfirmButton: false,
-//         timer: 1700
-//   });
-//         inputs.forEach(input => {
-//           input.className = "errado"
-//         });
-//     }
-  
-
-// });
-
 document.querySelector('#registerForm button').addEventListener('click', async (ev) => {
   ev.preventDefault();
   const submitButton = document.querySelector("#registerForm button");
@@ -191,8 +74,6 @@ document.getElementById('inputs').addEventListener('submit', async (event) => {
   const senha = document.getElementById('senha').value;
   const conSenha = document.getElementById('consenha').value;
   const submitButton = document.querySelector("#registerForm button");
-
-  console.log('Dados enviados:', { name, email, senha, cod });
   if (senha === conSenha) {
     try {
       const response = await fetch('/api/register', {
