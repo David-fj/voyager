@@ -30,30 +30,179 @@ cadastro.addEventListener("click", mudarParaCadastro)
 
 // CADASTRO
 
-document.getElementById('registerForm').addEventListener('submit', async (event) => {
-    event.preventDefault();
+// document.querySelector('#registerForm button').addEventListener('click', async (ev) => {
+//   ev.preventDefault();
+//   const submitButton = document.querySelector("#registerForm button");
+//   submitButton.disabled = true;
+//   submitButton.textContent = "Carregando...";
+
+//   const popUp = document.querySelector('.popUpVerification')
+//   popUp.style.display = 'block'
+
+//   const email = document.getElementById('email').value;
+
+//   const response = await fetch('/api/confirm', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify({ email })
+//   });
+//   console.log(response.ok)
+
+// });
+// // document.getElementById('registerForm').addEventListener('submit', async (event) => {
+// document.getElementById('inputs').addEventListener('submit', async (event) => {
+//   event.preventDefault();
+//   console.log("olaaaa")
+//   let cod = '';
   
-    const name = document.getElementById('nome').value;
-    const email = document.getElementById('email').value;
-    const senha = document.getElementById('senha').value;
-    const conSenha = document.getElementById('consenha').value;
-    const inputs = document.querySelectorAll("#registerForm input");
-    const submitButton = document.querySelector("#registerForm button");
 
-    if( senha === conSenha ){
+//     const button = document.querySelector(".submit")
+//     button.addEventListener('click', event => {
+//       const inputForCode = document.querySelectorAll(".input")
+//       let valor;
+//         for (let i = 1; i <= inputForCode.length; i++) {
+//           valor = inputForCode[i - 1].value.toString();
+//           cod += valor
+//         }
+//     })
+  
+//     const name = document.getElementById('nome').value;
+//     const email = document.getElementById('email').value;
+//     const senha = document.getElementById('senha').value;
+//     const conSenha = document.getElementById('consenha').value;
+//     const inputs = document.querySelectorAll("#registerForm input");
+//     const submitButton = document.querySelector("#registerForm button");
 
+//     if( senha === conSenha ){
+
+//     try {
+//       const response = await fetch('/api/register', {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify({ name, email, senha, cod })
+//       });
+  
+//       if (response.ok) {
+//         const result = await response.json();
+//         Swal.fire({
+//           position: 'top-end',
+//           text: `Usuário cadastrado com sucesso!`,
+//           background: '#3085d6',
+//           color: '#fff',
+//           showConfirmButton: false,
+//           timer: 1700
+//     });
+
+//         localStorage.setItem('isLoggedIn', 'true');
+//         localStorage.setItem('userName', name);
+//         localStorage.setItem('idUser', result.id);
+//         window.location.href = "../Home-logged/index.html";
+        
+//       } else {
+//         const error = await response.json();
+//         inputs.forEach(input => {
+//           input.className = "errado"
+//         });
+//         Swal.fire({
+//           position: 'top-end',
+//           text: `Erro ${error.error}`,
+//           background: '#ee5454',
+//           color: '#fff',
+//           showConfirmButton: false,
+//           timer: 1700
+//     });
+//       }
+//     } catch (error) {
+//       console.error('Erro ao fazer a requisição:', error);
+//       Swal.fire({
+//         position: 'top-end',
+//         text: 'Erro ao cadastrar usuário!',
+//         background: '#ee5454',
+//         color: '#fff',
+//         showConfirmButton: false,
+//         timer: 1700
+//   });
+//     } finally {
+//       submitButton.disabled = false;
+//       submitButton.textContent = "Cadastrar";
+//     }
+//     } else {
+//       Swal.fire({
+//         position: 'top-end',
+//         text: 'Cadastro incorreto!',
+//         background: '#ee5454',
+//         color: '#fff',
+//         showConfirmButton: false,
+//         timer: 1700
+//   });
+//         inputs.forEach(input => {
+//           input.className = "errado"
+//         });
+//     }
+  
+
+// });
+
+document.querySelector('#registerForm button').addEventListener('click', async (ev) => {
+  ev.preventDefault();
+  const submitButton = document.querySelector("#registerForm button");
+  submitButton.disabled = true;
+  submitButton.textContent = "Carregando...";
+
+  const popUp = document.querySelector('.popUpVerification');
+  const email = document.getElementById('email').value;
+
+  try {
+    const response = await fetch('/api/confirm', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email })
+    });
+
+    if (response.ok) {
+      popUp.style.display = 'block';
+      console.log("E-mail enviado com sucesso");
+    } else {
+      console.error('Erro ao enviar o e-mail');
+    }
+  } catch (error) {
+    console.error('Erro na requisição:', error);
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = "Cadastrar";
+  }
+});
+
+// Evento para registrar o usuário após inserir o código
+document.getElementById('inputs').addEventListener('submit', async (event) => {
+  event.preventDefault();
+  let cod = '';
+  const inputForCode = document.querySelectorAll(".input");
+  inputForCode.forEach(input => cod += input.value);
+
+  const name = document.getElementById('nome').value;
+  const email = document.getElementById('email').value;
+  const senha = document.getElementById('senha').value;
+  const conSenha = document.getElementById('consenha').value;
+  const submitButton = document.querySelector("#registerForm button");
+
+  console.log('Dados enviados:', { name, email, senha, cod });
+  if (senha === conSenha) {
     try {
-      submitButton.disabled = true;
-      submitButton.textContent = "Carregando...";
-
       const response = await fetch('/api/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ name, email, senha })
+        body: JSON.stringify({ name, email, senha, cod })
       });
-  
+
       if (response.ok) {
         const result = await response.json();
         Swal.fire({
@@ -63,27 +212,22 @@ document.getElementById('registerForm').addEventListener('submit', async (event)
           color: '#fff',
           showConfirmButton: false,
           timer: 1700
-    });
-        console.log(result);
+        });
 
         localStorage.setItem('isLoggedIn', 'true');
         localStorage.setItem('userName', name);
         localStorage.setItem('idUser', result.id);
         window.location.href = "../Home-logged/index.html";
-        
       } else {
         const error = await response.json();
-        inputs.forEach(input => {
-          input.className = "errado"
-        });
         Swal.fire({
           position: 'top-end',
-          text: `Erro ${error.error}`,
+          text: `Erro: ${error.error}`,
           background: '#ee5454',
           color: '#fff',
           showConfirmButton: false,
           timer: 1700
-    });
+        });
       }
     } catch (error) {
       console.error('Erro ao fazer a requisição:', error);
@@ -94,26 +238,21 @@ document.getElementById('registerForm').addEventListener('submit', async (event)
         color: '#fff',
         showConfirmButton: false,
         timer: 1700
-  });
+      });
     } finally {
       submitButton.disabled = false;
       submitButton.textContent = "Cadastrar";
     }
-    } else {
-      Swal.fire({
-        position: 'top-end',
-        text: 'As senhas não condizem!',
-        background: '#ee5454',
-        color: '#fff',
-        showConfirmButton: false,
-        timer: 1700
-  });
-        inputs.forEach(input => {
-          input.className = "errado"
-        });
-    }
-  
-
+  } else {
+    Swal.fire({
+      position: 'top-end',
+      text: 'Senhas não coincidem!',
+      background: '#ee5454',
+      color: '#fff',
+      showConfirmButton: false,
+      timer: 1700
+    });
+  }
 });
 
 // LOGIN - Márcio nunca duvide dos seus alunos, eu não vou desistir, não por que vc falou que eu iria desistir e sim porque isso é algo que eu quero, mesmo que dê errado, eu fiz!
@@ -136,7 +275,6 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
     });
   
     const result = await response.json();
-    console.log(result)
     if (result.success) {
       Swal.fire({
         position: 'top-end',
@@ -149,34 +287,14 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
       localStorage.setItem('isLoggedIn', 'true');
       localStorage.setItem('userName', result.name);
       localStorage.setItem('idUser', result.userId);
-    } else if ( result.error === 'ETIMEDOUT'  ){
-      Swal.fire({
-      title: 'Servidor fora do ar!',
-      text: "Você deseja logar em uma conta Teste?",
-      icon: 'warning',
-      showCancelButton: true,
-      color: '#fff',
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Sim',
-      cancelButtonText: 'Não'
-  }).then((result) => {
-      if (result.isConfirmed) {
-          window.location.href = "../Home-logged/index.html"
-          localStorage.setItem("isLoggedIn", "true")
-          localStorage.setItem("userName", "Teste")
-      }
-});
   } else {
     Swal.fire({
       position: 'top-end',
       title: 'Email ou senha incorretos!',
       icon: 'error',
-      color: '#fff',
       showConfirmButton: false,
       timer: 1000
 });
-      console.log(result.error)
       submitButton.disabled = false;
       submitButton.textContent = "Entrar";
       inputs.forEach(input => {
@@ -185,4 +303,29 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
     }
   });
 
-  
+/*VERIFICAÇÃO*/
+const inputs = document.getElementById('inputs')
+inputs.addEventListener('input', event => {
+  const val = event.target.value
+
+  if(isNaN(val)){
+    target.value = ""
+    return;
+  }
+
+  if( val != "" ){
+    const next = event.target.nextElementSibling;
+    next.focus()
+  }
+})
+
+inputs.addEventListener('keyup', event => {
+  const target = event.target
+  const key = event.key.toLowerCase()
+  if (key == "backspace" || key == "delete") {
+    event.target.value = "";
+    const prev = target.previousElementSibling;
+    prev.focus();
+    return;
+  }
+})

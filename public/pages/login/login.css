@@ -5,6 +5,15 @@
     font-family: "Poppins", sans-serif;
 }
 
+@keyframes popUp {
+    from{
+        top: 0%;
+    }
+    to{
+        top: 20%;
+    }
+}
+
 :root {
     --white-color: #fff;
     --nav-color: #262626;
@@ -197,4 +206,91 @@ span{
 
 .login{
     display: none;
+}
+
+.popUpVerification{
+    display: none;
+    position: absolute;
+    z-index: 1000;
+
+    animation:  popUp;
+}
+
+.popUpVerification .f-t{
+    display: flex;
+    flex-direction: column;
+    width: 32rem;
+    height: 12.375rem;
+    background: var(--nav-color);
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.popUpVerification .f-t img{
+    height: 4rem;
+    width: 4rem;
+}
+
+.popUpVerification .f-t h2{
+    font-size: medium;
+    font-size: 30;
+}
+
+.popUpVerification .s-t{
+    display: flex;
+    flex-direction: column;
+    width: 32rem;
+    height: 13rem;
+
+    background: var(--cad-main-bk);
+    background: black;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.popUpVerification .s-t #inputs .input{
+    border: 1px solid var(--nav-color);
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: -1px;
+
+    text-align: center;
+    font-size: 16;
+}
+
+.popUpVerification .s-t #inputs .input:focus{
+    outline: 1px solid var(--border-cads);
+}
+
+.popUpVerification .s-t #inputs .fr{
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.popUpVerification .s-t #inputs .ls{
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.popUpVerification .s-t #inputs .trc{
+    margin-right: 0.5rem;
+}
+
+.submit{
+    padding: 0.75rem;
+    border: none;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    background: var(--cad-main-bk);
+    color: var(--white-color);
+    transition: 0.3s;
+    width: 80%;
+}
+
+.submit:hover{
+    background: var(--border-cads);
+    color: var(--cad-main-bk);
 }

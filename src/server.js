@@ -2,8 +2,8 @@ const express = require('express');
 const path = require('path');
 //const sequelize = require('./models');
 const app = express();
+const session = require('express-session');
 const userRoutes = require('./routes/user');
-
 app.use(express.json());
 
 app.use(express.static(path.join(__dirname, '../public')));

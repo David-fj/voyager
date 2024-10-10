@@ -1,17 +1,158 @@
 const express = require('express');
 const router = express.Router();
-const { User, Runs } = require('../models');
+const { User, Runs, Verifications } = require('../models');
 const { getUsersWithScores } = require('../code/tableLogin')
 const bcrypt = require('bcryptjs');
 
+const crypto = require('crypto');
+const nodemailer = require('nodemailer');
+const { error } = require('console');
+
+
 // Rota - novo usuário
-router.post('/register', async (req, res) => {
-  const { name, email, senha } = req.body;
+// function criaToken() {
+//   return crypto.randomInt(100000, 999999).toString()
+// }
+// const codigo = Number(criaToken())
+
+// router.post('/confirm', async (req, res) => {
+//   const { email } = req.body
+
+//   if (!email) {
+//     return res.status(400).json({ error: 'Email não fornecido' });
+//   }
+  
+
+//   const configEmail = nodemailer.createTransport({
+//     host: 'smtp.gmail.com',
+//     port: 465,
+//     secure: true,
+//     auth: {
+//         user: 'voyageredutec@gmail.com',
+//         pass: 'cbpooqysuzoamvnj'
+//     }
+// }); 
+  
+//   try{
+//   await configEmail.sendMail({
+//        from: 'Voyager <voyageredutec@gmail.com>',
+//        to: email,
+//        subject: 'teste de confirmação',
+//        html: `<h1>codigo de confirmação</h1> <p>Esse é seu código: ${codigo}</p>`,
+//        text: `Código de confirmação Codigo: ${codigo}`
+//    })
+//    .then(() => 
+//     router.post('/register', async (req, res) => {
+
+//       let resposta;
+//       const { name, email, senha, cod } = req.body;
+      
+//         try {    
+//           async function confirmar() {
+//                 if (cod == codigo) {
+//                     resposta = true
+//                 } else {
+//                     resposta = false
+//                 }
+//             }
+//             confirmar()
+      
+//           if (!name || !email || !senha || resposta === false) {
+//             return res.status(400).json({ error: 'Erro' });
+//           }
+//           const hashedPassword = await bcrypt.hash(senha, 10);
+//           let newUser;
+//           if( resposta === true ){
+//             newUser = await User.create({
+//             name,
+//             email,
+//             senha: hashedPassword
+//           }) 
+//           res.status(201).json(newUser);
+//         } else {
+//             return res.status(400).json({ error: error });
+//           };
+          
+//         } catch (error) {
+//           console.error('Erro ao criar o usuário:', error);
+//           res.status(500).json({ error: 'Erro interno do servidor' });
+//         }
+//       })
+//   )
+//    .catch((err) => console.log('Erro ao enviar, tente novamente: ', err));
+
+
+//   res.json({message: 'Executada'})
+//   } catch (err) {
+//     console.log('Erro ao enviar o e-mail:', err);
+//     res.status(500).json({ error: 'Erro ao enviar o e-mail' });
+//   }
+// })
+
+
+// function criaToken() {
+//   return crypto.randomInt(100000, 999999).toString();
+// }
+
+router.post('/confirm', async (req, res) => {
+  const { email } = req.body;
+  
+  if (!email) {
+    return res.status(400).json({ error: 'Email não fornecido' });
+  }
+  
+  // Gerar e armazenar o código de verificação na sessão
+  const codigoVerificacao = crypto.randomInt(100000, 999999).toString();
+  await Verifications.create({
+    email,
+    codigo: codigoVerificacao
+  });
+
+  const configEmail = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
+    auth: {
+      user: 'voyageredutec@gmail.com',
+      pass: 'cbpooqysuzoamvnj'
+    }
+  });
 
   try {
-    if (!name || !email || !senha) {
-      return res.status(400).json({ error: 'Nome e senha são obrigatórios' });
-    }
+    await configEmail.sendMail({
+      from: 'Voyager <voyageredutec@gmail.com>',
+      to: email,
+      subject: 'Código de confirmação',
+      html: `<h1>Código de confirmação</h1> <p>Esse é seu código: ${codigoVerificacao}</p>`,
+      text: `Código de confirmação: ${codigoVerificacao}`
+    });
+
+    res.json({ message: 'Email enviado com sucesso' });
+  } catch (err) {
+    console.log('Erro ao enviar o e-mail:', err);
+    res.status(500).json({ error: 'Erro ao enviar o e-mail' });
+  }
+
+});
+
+
+router.post('/register', async (req, res) => {
+  const { name, email, senha, cod } = req.body;
+  const verification = await Verifications.findOne({
+    where: { email, codigo: cod }
+  });
+  console.log(cod, verification)
+  console.log('Sessão no momento do registro:', req.session);
+
+  if (!verification.codigo) {
+    return res.status(400).json({ error: 'Nenhum código de verificação encontrado' });
+  }
+  // Verificar se o código fornecido corresponde ao código armazenado na sessão
+  if (cod != verification.codigo) {
+    return res.status(400).json({ error: 'Código de confirmação inválido', err: console.log(cod, verification) });
+  }
+
+  try {
     const hashedPassword = await bcrypt.hash(senha, 10);
     const newUser = await User.create({
       name,
@@ -25,6 +166,9 @@ router.post('/register', async (req, res) => {
     res.status(500).json({ error: 'Erro interno do servidor' });
   }
 });
+
+
+
 
 /*LOGIN*/
 
