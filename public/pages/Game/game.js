@@ -285,8 +285,6 @@ window.addEventListener('keydown', function (e) {
     }
 });
 
-console.log(pontuacao)
-
 // Inserir pontuacao
 
 
