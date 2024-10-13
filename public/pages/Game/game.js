@@ -14,7 +14,9 @@ dinoImage.src = '../../images/sprite/spritesheet.jpg'; // Caminho da spritesheet
 // dinoImage.src = '../../images/sprite/monkey.png'; // Caminho da spritesheet
 
 let cactusImage = new Image();
-cactusImage.src = '../../images/sprite/spritesheet3.jpg';
+cactusImage.src = '../../images/sprite/spritessheet3.jpg';
+
+
 
 let dino = {
   x: 50,
@@ -31,7 +33,7 @@ let dino = {
 
 let cactus = {
     x: canvas.width,
-    y: 160 - 42,  // Cacto no chão
+    y: 160 - 42, // Cacto no chão
     width: 32,
     height: 32,
     speed: 2.5,
@@ -87,6 +89,7 @@ function drawCactus() {
   }
 }
 
+
 function handleJump() {
   if (dino.isJumping) {
     dino.velocityY += dino.gravity;
@@ -100,12 +103,28 @@ function handleJump() {
   }
 }
 
+
+function margem2() {
+  return dino.width * 0.50
+}
+let margemDeErroDino = margem2()
+function margem3() {
+  return dino.height * 0.80
+}
+let margemVerticalDeErroDino = dino.height * 0.80
+function margem1() {
+  return cactus.width * 0.40
+}
+let margemDeErro = margem1()
+
 function handleCollision() {
+  
+  console.log(cactus.width)
   if (
-    dino.x < cactus.x + cactus.width - 24 &&
-    dino.x + dino.width > cactus.x + 7 &&
+    dino.x < cactus.x + cactus.width - margemDeErro &&
+    dino.x + dino.width > cactus.x + margemDeErroDino &&
     dino.y < cactus.y + cactus.height &&
-    dino.y + dino.height > cactus.y + 10
+    dino.y + dino.height > cactus.y + margemVerticalDeErroDino
   ) {
     gameOver = true;
   }
@@ -254,8 +273,19 @@ function updateGame() {
 
   cactus.x -= (cactus.speed + (Math.floor(score/5)));
 
+  function tamanhoCactus(){
+    return Math.floor(Math.random() * 48) + 32
+  }
+  
+
+  let tamanho = tamanhoCactus();
+
   if (cactus.x + cactus.width < 0) {
     cactus.x = canvas.width;
+    cactus.width = tamanho;
+    cactus.height = tamanho;
+
+    cactus.y = 160 - (tamanho + 10)
     score++;
     pontuacao.innerHTML = `${Math.floor(score).toString().padStart(3, '0')}`
   }
