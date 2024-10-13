@@ -63,6 +63,7 @@ document.querySelector('#registerForm button').addEventListener('click', async (
 });
 
 // Evento para registrar o usuário após inserir o código
+
 document.getElementById('inputs').addEventListener('submit', async (event) => {
   event.preventDefault();
   let cod = '';

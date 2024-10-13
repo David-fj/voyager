@@ -213,7 +213,9 @@ span{
     position: absolute;
     z-index: 1000;
 
-    animation:  popUp;
+    animation-name:  popUp;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
 }
 
 .popUpVerification .f-t{
@@ -251,6 +253,15 @@ span{
     justify-content: center;
     gap: 2rem;
     border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.popUpVerification .s-t #inputs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
 }
 
 .popUpVerification .s-t #inputs .input{

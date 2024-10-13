@@ -1,19 +1,25 @@
 const express = require('express');
 const router = express.Router();
-const { User, Runs, Verifications } = require('../models');
+const { User, Runs, Verifications, Emaild } = require('../models');
 const { getUsersWithScores } = require('../code/tableLogin')
 const bcrypt = require('bcryptjs');
 
 const crypto = require('crypto');
 const nodemailer = require('nodemailer');
 const { error } = require('console');
+const { where } = require('sequelize');
 
 
 // Rota - novo usuário
 
 router.post('/confirm', async (req, res) => {
   const { email } = req.body;
-  
+  const [emailConfig] = await Emaild.findAll({
+    attributes: ['host', 'port', 'secure', 'user', 'pass'],
+    where: {id: 1}
+  })
+
+  const { host, port, secure, user, pass } = emailConfig.get()
   if (!email) {
     return res.status(400).json({ error: 'Email não fornecido' });
   }
@@ -24,14 +30,15 @@ router.post('/confirm', async (req, res) => {
     email,
     codigo: codigoVerificacao
   });
-
+  console.log(host, port, secure, user, pass)
+  console.log(emailConfig)
   const configEmail = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 465,
-    secure: true,
+    host: host,
+    port: port,
+    secure: secure,
     auth: {
-      user: 'voyageredutec@gmail.com',
-      pass: 'cbpooqysuzoamvnj'
+      user: user,
+      pass: pass
     }
   });
 
