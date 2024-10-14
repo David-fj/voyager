@@ -25,7 +25,7 @@ let dino = {
   height: 32,
   velocityY: 0,
   jumpPower: -8,
-  gravity: 0.3,
+  gravity: 0.,
   isJumping: false,
   frameX: 0,    // Controle do quadro atual na spritesheet
   frameCount: 3 // Número total de quadros na spritesheet
