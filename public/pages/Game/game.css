@@ -26,13 +26,9 @@ color: var(--text-logo-color);
 --red: #ee5454;
 }
 
-html{
-    background: var(--nav-color);
-}
-
 body {
     height: 100svh;
-    background: var(--borda-sla);
+    background: var(--mint-green);
 }
   
 header {
@@ -147,6 +143,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }   
 
 /*Da Pagina*/
@@ -180,7 +177,6 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: var(--borda-sla);
 }
 
 canvas {
@@ -296,6 +292,12 @@ label{
 
 #verde {
     background-color: green;
+}
+
+.caixaGame span{
+    padding: 1rem;
+    font-size: 1rem;
+    color: var(--green-blue-darker);
 }
 /* FOOTER */
 

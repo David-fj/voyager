@@ -24,8 +24,8 @@ let dino = {
   width: 32,
   height: 32,
   velocityY: 0,
-  jumpPower: -10,
-  gravity: 0.5,
+  jumpPower: -8,
+  gravity: 0.3,
   isJumping: false,
   frameX: 0,    // Controle do quadro atual na spritesheet
   frameCount: 3 // Número total de quadros na spritesheet
@@ -36,7 +36,7 @@ let cactus = {
     y: 160 - 55, // Cacto no chão
     width: 32,
     height: 32,
-    speed: 2.5,
+    speed: 1.5,
     frameX: 0,    // Controle do quadro atual na spritesheet
     frameCount: 5 // Número total de quadros na spritesheet
 };
@@ -81,11 +81,11 @@ function drawCactus() {
 //   ctx.fillRect(cactus.x, cactus.y, cactus.width, cactus.height);
   let quadro = new Image()
   quadro.src = localImagem[cactus.frameX]
-
+  console.log(quadro)
   ctx.drawImage(
     quadro,
     cactus.x, cactus.y,             // Posição no canvas
-    cactus.width, cactus.height      // Tamanho no canvas
+    cactus.width, cactus.height,
   );
 
   // Atualiza o quadro da animação a cada N frames
@@ -112,7 +112,6 @@ function handleJump() {
 
 function handleCollision() {
   let dinoTolera = dino.width * 0.45
-  console.log(cactus.width)
   if (
     dino.x + dinoTolera < cactus.x + cactus.width &&
     dino.x + dino.width > cactus.x &&
@@ -307,11 +306,11 @@ function updateGame() {
 }
 
 window.addEventListener('keydown', function (e) {
-    if (!dino.isJumping && gameStarted) {
+    if (!dino.isJumping && gameStarted && e.key === 'w') {
         dino.isJumping = true;          // Inicia o pulo
         dino.velocityY = dino.jumpPower; // Define a velocidade de pulo
     }
-    if (!gameStarted) {
+    if (!gameStarted && e.key === 'w') {
       gameStarted = true;
       updateGame();
     }
