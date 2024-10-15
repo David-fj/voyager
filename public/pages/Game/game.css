@@ -28,7 +28,7 @@ color: var(--text-logo-color);
 
 body {
     height: 100svh;
-    background: var(--mint-green);
+    background: black;
 }
   
 header {
@@ -179,10 +179,22 @@ main {
     flex-direction: column;
 }
 
+@keyframes animacaoFundo {
+    from{
+        background-position-x: 0;
+    }
+    to{
+        background-position-x: 122%;
+    }
+}
+
 canvas {
     /* border: 2px solid #000; */
-    background-image: url('../../images/sprite/ceuestrelado.jpg');
-    background-size: cover;
+    background-image: url('../../images/sprite/fundo.png');
+    /* background-position-x: ; */
+    background-size: auto 120%;
+    background-repeat: repeat-x;
+    animation: animacaoFundo linear infinite 100s;
     width: 960px;
     height: 100%;
     /* width: 800px;
@@ -297,7 +309,7 @@ label{
 .caixaGame span{
     padding: 1rem;
     font-size: 1rem;
-    color: var(--green-blue-darker);
+    color: var(--mint-green);
 }
 /* FOOTER */
 

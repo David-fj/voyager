@@ -8,6 +8,8 @@ const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 ctx.imageSmoothingEnabled = false;
 
+const canvasBackground = document.querySelector("canvas");
+
 // Carrega a imagem da spritesheet do dinossauro
 let dinoImage = new Image();
 dinoImage.src = '../../images/sprite/spritesheet.jpg'; // Caminho da spritesheet
@@ -16,7 +18,9 @@ dinoImage.src = '../../images/sprite/spritesheet.jpg'; // Caminho da spritesheet
 let cactusImage = new Image();
 cactusImage.src = '../../images/sprite/spritessheet3.png';
 
-
+const slapo = 0.1;
+let waiting;
+let antGravity;
 
 let dino = {
   x: 50,
@@ -24,9 +28,10 @@ let dino = {
   width: 32,
   height: 32,
   velocityY: 0,
-  jumpPower: -8,
-  gravity: 0.,
+  jumpPower: -9,
+  gravity: 0.4,
   isJumping: false,
+  isDown: false,
   frameX: 0,    // Controle do quadro atual na spritesheet
   frameCount: 3 // Número total de quadros na spritesheet
 };
@@ -36,7 +41,7 @@ let cactus = {
     y: 160 - 55, // Cacto no chão
     width: 32,
     height: 32,
-    speed: 1.5,
+    speed: 2,
     frameX: 0,    // Controle do quadro atual na spritesheet
     frameCount: 5 // Número total de quadros na spritesheet
 };
@@ -45,6 +50,7 @@ let gameOver = false;
 let score = 0;
 let gameStarted = false;
 let animationFrame = 0;  // Contador de frames para controlar a animação
+let waitingUjhasuy = 0;
 
 // Desenha o dinossauro animado usando a spritesheet
 function drawDino() {
@@ -81,7 +87,6 @@ function drawCactus() {
 //   ctx.fillRect(cactus.x, cactus.y, cactus.width, cactus.height);
   let quadro = new Image()
   quadro.src = localImagem[cactus.frameX]
-  console.log(quadro)
   ctx.drawImage(
     quadro,
     cactus.x, cactus.y,             // Posição no canvas
@@ -108,7 +113,16 @@ function handleJump() {
   }
 }
 
+function handleDown() {
+  if(dino.isDown && dino.isJumping) {
+    dino.gravity = 3;
+  }
 
+  if(dino.isDown && !dino.isJumping) {
+    dino.gravity = antGravity;
+    dino.isDown = false;
+  }
+}
 
 function handleCollision() {
   let dinoTolera = dino.width * 0.45
@@ -134,6 +148,7 @@ function resetGame() {
 
 function updateGame() {
   if (gameOver) {
+    canvasBackground.style.animation = "none";
     function verificarSelecao() {
         const selecionado = document.querySelector("input[name='optionsSelect']:checked")
 
@@ -262,8 +277,19 @@ function updateGame() {
   } else {
 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  if(!waiting){
+    cactus.x -= (cactus.speed + (Math.floor(score/5)))
+  } else {
+    const ticks = Math.floor(Math.random() * 3) + 1;
+    if(waitingUjhasuy % (10*(ticks*ticks)*(Math.floor(score/5)+1)) == 0){
+      waiting = false;
+      waitingUjhasuy = 0;
+    }
+    waitingUjhasuy++;
+  }
+  // if(  ){
 
-  cactus.x -= (cactus.speed + (Math.floor(score/5)));
+  // }
 
   function tamanhoCactus(){
     return Math.floor(Math.random() * 10) + 10
@@ -283,23 +309,34 @@ function updateGame() {
   let localRandom = local()
 
   if (cactus.x + cactus.width < 0) {
-    cactus.x = canvas.width;
-    cactus.width = tamanho;
-    cactus.height = tamanho;
-    cactus.y = localRandom
-    score++;
-    pontuacao.innerHTML = `${Math.floor(score).toString().padStart(3, '0')}`
+      cactus.x = canvas.width;
+      cactus.width = tamanho;
+      cactus.height = tamanho;
+      cactus.y = localRandom
+      score++;
+      pontuacao.innerHTML = `${Math.floor(score).toString().padStart(3, '0')}`
+      if(score % 5 == 0) {
+        if(dino.isDown){
+          antGravity += slapo + 0.01;
+        }
+        dino.gravity += slapo + 0.01;
+        dino.jumpPower -= slapo*10;
+        canvasBackground.style.animation = `animacaoFundo linear infinite ${5-slapo*Math.floor(score/5)}s`;
+      }
+      waiting = true;
   }
 
   drawCactus();
   drawDino();
 
   handleJump();
+  handleDown();
   handleCollision();
 
   animationFrame++;  // Incrementa o contador de frames para a animação
 
   if (gameStarted) {
+    canvasBackground.style.animation = "animacaoFundo linear infinite 5s";
     requestAnimationFrame(updateGame);
   }
 }
@@ -309,6 +346,10 @@ window.addEventListener('keydown', function (e) {
     if (!dino.isJumping && gameStarted && e.key === 'w') {
         dino.isJumping = true;          // Inicia o pulo
         dino.velocityY = dino.jumpPower; // Define a velocidade de pulo
+    }
+    if (dino.isJumping && gameStarted && e.key === 's') {
+      dino.isDown = true;
+      antGravity = dino.gravity;
     }
     if (!gameStarted && e.key === 'w') {
       gameStarted = true;
