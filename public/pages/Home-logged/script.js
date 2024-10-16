@@ -44,18 +44,18 @@ logar.addEventListener("click", () => {
     }
 })
 
-function mudaLinkHome() {
-    if (localStorage.getItem("isLoggedIn") == "true"){
-        logar.style.display = "none";
-        logoLink.setAttribute("href", "#")        
-    } else {
-        alert("Você não está logado.")
-        window.location.href = "../../index.html"
-        deslogar.style.display = "none";
-    }
-}
+// function mudaLinkHome() {
+//     if (localStorage.getItem("isLoggedIn") == "true"){
+//         logar.style.display = "none";
+//         logoLink.setAttribute("href", "#")        
+//     } else {
+//         alert("Você não está logado.")
+//         window.location.href = "../../index.html"
+//         deslogar.style.display = "none";
+//     }
+// }
 
-mudaLinkHome()
+// mudaLinkHome()
 
 // teste
 
