@@ -152,3 +152,106 @@ function buscarOsTemas() {
 }
 
 buscarOsTemas()
+
+
+function verificarTema(){
+  if ( localStorage.getItem('tema') === 'estudobk' ) {
+    const painel = document.querySelectorAll('.panel')
+    painel[0].style.display  = 'block'
+    temaExpandir[0].classList.add('active')
+
+    function trocaLink() {
+      fetch('data.json')          //Buscar o .json
+          .then(response => response.json())          // se achar o .json pega a resposta
+          .then(data => {
+                  iframe.src = `${data.Cosmologia[0]}`
+                  
+            })
+            
+          }
+          trocaLink()
+  }
+  if ( localStorage.getItem('tema') === 'estudobk1' ) {
+    const painel = document.querySelectorAll('.panel')
+    painel[1].style.display  = 'block'
+    temaExpandir[1].classList.add('active')
+
+    function trocaLink() {
+      fetch('data.json')          //Buscar o .json
+          .then(response => response.json())          // se achar o .json pega a resposta
+          .then(data => {
+                  iframe.src = `${data.Cosmologia[0]}`
+                  
+            })
+            
+          }
+          trocaLink()
+  }
+  if ( localStorage.getItem('tema') === 'estudobk2' ) {
+    const painel = document.querySelectorAll('.panel')
+    painel[2].style.display  = 'block'
+    temaExpandir[2].classList.add('active')
+
+    function trocaLink() {
+      fetch('data.json')          //Buscar o .json
+          .then(response => response.json())          // se achar o .json pega a resposta
+          .then(data => {
+                  iframe.src = `${data.Cosmologia[0]}`
+                  
+            })
+            
+          }
+          trocaLink()
+  }
+  if ( localStorage.getItem('tema') === 'estudobk3' ) {
+    const painel = document.querySelectorAll('.panel')
+    painel[3].style.display  = 'block'
+    temaExpandir[3].classList.add('active')
+
+    function trocaLink() {
+      fetch('data.json')          //Buscar o .json
+          .then(response => response.json())          // se achar o .json pega a resposta
+          .then(data => {
+                  iframe.src = `${data.Cosmologia[0]}`
+                  
+            })
+            
+          }
+          trocaLink()
+  }
+  if ( localStorage.getItem('tema') === 'estudobk4' ) {
+    const painel = document.querySelectorAll('.panel')
+    painel[4].style.display  = 'block'
+    temaExpandir[4].classList.add('active')
+
+    function trocaLink() {
+      fetch('data.json')          //Buscar o .json
+          .then(response => response.json())          // se achar o .json pega a resposta
+          .then(data => {
+                  iframe.src = `${data.Cosmologia[0]}`
+                  
+            })
+            
+          }
+          trocaLink()
+  }
+  if ( localStorage.getItem('tema') === 'estudobk5' ) {
+    const painel = document.querySelectorAll('.panel')
+    painel[5].style.display  = 'block'
+    temaExpandir[5].classList.add('active')
+
+    function trocaLink() {
+      fetch('data.json')          //Buscar o .json
+          .then(response => response.json())          // se achar o .json pega a resposta
+          .then(data => {
+                  iframe.src = `${data.Cosmologia[0]}`
+                  
+            })
+            
+          }
+          trocaLink()
+  }
+  localStorage.removeItem('tema')
+}
+
+verificarTema()

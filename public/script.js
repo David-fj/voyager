@@ -32,3 +32,12 @@ cadastroButton.addEventListener('click', () => {
   localStorage.removeItem("loginPage");
   localStorage.setItem("loginPage", 1);
 })
+
+const temas = document.querySelectorAll('.color-aling-planet ul li')
+temas.forEach(tema => {
+  tema.addEventListener('click', guardaTema)
+
+  function guardaTema(){
+    localStorage.setItem('tema', tema.className)
+  }
+})

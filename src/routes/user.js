@@ -47,8 +47,9 @@ router.post('/confirm', async (req, res) => {
       from: 'Voyager <voyageredutec@gmail.com>',
       to: email,
       subject: 'Código de confirmação',
-      html: `<h1>Código de confirmação</h1> <p>Esse é seu código: ${codigoVerificacao}</p>`,
-      text: `Código de confirmação: ${codigoVerificacao}`
+      html: `<div><img src="../../images/logo.svg" alt="" class="logo" /> <h1>Voyager</h1> </div>
+      <h2>Código de confirmação</h2> <p>Esse é seu código: ${codigoVerificacao}</p>`,
+      text: `Código de confirmação: ${codigoVerificacao}`,
     });
 
     res.json({ message: 'Email enviado com sucesso' });
