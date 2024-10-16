@@ -47,8 +47,46 @@ router.post('/confirm', async (req, res) => {
       from: 'Voyager <voyageredutec@gmail.com>',
       to: email,
       subject: 'Código de confirmação',
-      html: `<div><img src="../../images/logo.svg" alt="" class="logo" /> <h1>Voyager</h1> </div>
-      <h2>Código de confirmação</h2> <p>Esse é seu código: ${codigoVerificacao}</p>`,
+      html: `
+      <!DOCTYPE html>
+      <html lang="pt-BR">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+          *{
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+    
+          h2, p{
+            color: #000;
+          }
+    
+          h1{
+            background: #115575;
+            color: #F4F4F4;
+            font-size: 1.5rem;
+            padding: 1rem;
+            width: 80%;
+            aling-text: center;
+          }
+    
+        </style>
+      </head>
+      <body>
+      <header> <h1>Voyager</h1> </header>
+      <main>
+        <div> 
+              <h2>Código de confirmação</h2> 
+              <p>Esse é seu código:</p>
+        </div>
+        <span>${codigoVerificacao}</span>
+        </main>
+      <body>
+      </html>
+      `,
       text: `Código de confirmação: ${codigoVerificacao}`,
     });
 
