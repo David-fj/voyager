@@ -73,6 +73,8 @@ const iframe = document.querySelector("iframe")
 
 const resumo = document.querySelector(".videozao p")
 
+let tematica = [`Cosmologia`, `Sistema Solar`, `Sistemas e Evolução Estrelar`, 'Estrutura Galática', 'Exoplanetas', 'Instrumentos na Astronomia']
+
 function buscarOsTemas() {
   fetch('data.json')          //Buscar o .json
       .then(response => response.json())          // se achar o .json pega a resposta
@@ -84,6 +86,7 @@ function buscarOsTemas() {
               iframe.src = `${data.Cosmologia[clickArray]}`
               resumo.innerText = data.Textocos
               console.log(elementoClicado, clickArray)
+              document.querySelector('.tituloVideo').innerText = tematica[0]
 
             })
           })
@@ -95,6 +98,7 @@ function buscarOsTemas() {
               iframe.src = `${data.SistemaSolar[clickArray]}`
               resumo.innerText = data.Textosis
               console.log(elementoClicado, clickArray)
+              document.querySelector('.tituloVideo').innerText = tematica[1]
             })
           })
           
@@ -105,6 +109,7 @@ function buscarOsTemas() {
               iframe.src = `${data.Estrelas[clickArray]}`
               resumo.innerText = data.Textoestrelas
               console.log(elementoClicado, clickArray)
+              document.querySelector('.tituloVideo').innerText = tematica[2]
             })
           })
 
@@ -115,6 +120,7 @@ function buscarOsTemas() {
               iframe.src = `${data.Galaxias[clickArray]}`
               resumo.innerText = data.Textogal
               console.log(elementoClicado, clickArray)
+              document.querySelector('.tituloVideo').innerText = tematica[3]
             })
           })
 
@@ -135,6 +141,7 @@ function buscarOsTemas() {
               iframe.src = `${data.Exoplanetas[clickArray]}`
               resumo.innerText = data.Textoexo
               console.log(elementoClicado, clickArray)
+              document.querySelector('.tituloVideo').innerText = tematica[4]
             })
           })
 
@@ -145,6 +152,7 @@ function buscarOsTemas() {
               iframe.src = `${data.InstrumentacaoAstronomica[clickArray]}`
               resumo.innerText = data.Textoinstru
               console.log(elementoClicado, clickArray)
+              document.querySelector('.tituloVideo').innerText = tematica[5]
             })
           })
         })
@@ -152,7 +160,6 @@ function buscarOsTemas() {
 }
 
 buscarOsTemas()
-
 
 function verificarTema(){
   if ( localStorage.getItem('tema') === 'estudobk' ) {
@@ -165,6 +172,7 @@ function verificarTema(){
           .then(response => response.json())          // se achar o .json pega a resposta
           .then(data => {
                   iframe.src = `${data.Cosmologia[0]}`
+                  document.querySelector('.tituloVideo').innerText = tematica[0]
                   
             })
             
@@ -180,8 +188,8 @@ function verificarTema(){
       fetch('data.json')          //Buscar o .json
           .then(response => response.json())          // se achar o .json pega a resposta
           .then(data => {
-                  iframe.src = `${data.Cosmologia[0]}`
-                  
+                  iframe.src = `${data.SistemaSolar[0]}`
+                  document.querySelector('.tituloVideo').innerText = tematica[1]
             })
             
           }
@@ -196,8 +204,8 @@ function verificarTema(){
       fetch('data.json')          //Buscar o .json
           .then(response => response.json())          // se achar o .json pega a resposta
           .then(data => {
-                  iframe.src = `${data.Cosmologia[0]}`
-                  
+                  iframe.src = `${data.Estrelas[0]}`
+                  document.querySelector('.tituloVideo').innerText = tematica[2]
             })
             
           }
@@ -212,8 +220,8 @@ function verificarTema(){
       fetch('data.json')          //Buscar o .json
           .then(response => response.json())          // se achar o .json pega a resposta
           .then(data => {
-                  iframe.src = `${data.Cosmologia[0]}`
-                  
+                  iframe.src = `${data.Galaxias[0]}`
+                  document.querySelector('.tituloVideo').innerText = tematica[3]
             })
             
           }
@@ -228,8 +236,8 @@ function verificarTema(){
       fetch('data.json')          //Buscar o .json
           .then(response => response.json())          // se achar o .json pega a resposta
           .then(data => {
-                  iframe.src = `${data.Cosmologia[0]}`
-                  
+                  iframe.src = `${data.Exoplanetas[0]}`
+                  document.querySelector('.tituloVideo').innerText = tematica[4]
             })
             
           }
@@ -244,8 +252,8 @@ function verificarTema(){
       fetch('data.json')          //Buscar o .json
           .then(response => response.json())          // se achar o .json pega a resposta
           .then(data => {
-                  iframe.src = `${data.Cosmologia[0]}`
-                  
+                  iframe.src = `${data.InstrumentacaoAstronomica[0]}`
+                  document.querySelector('.tituloVideo').innerText = tematica[5]
             })
             
           }
