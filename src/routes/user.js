@@ -9,8 +9,7 @@ const nodemailer = require('nodemailer');
 const { error } = require('console');
 const { where } = require('sequelize');
 
-
-// Rota - novo usuário
+// Rota - Confirmação de Gmail
 
 router.post('/confirm', async (req, res) => {
   const { email } = req.body;
@@ -24,7 +23,6 @@ router.post('/confirm', async (req, res) => {
     return res.status(400).json({ error: 'Email não fornecido' });
   }
   
-  // Gerar e armazenar o código de verificação na sessão
   const codigoVerificacao = crypto.randomInt(100000, 999999).toString();
   await Verifications.create({
     email,
@@ -99,6 +97,8 @@ router.post('/confirm', async (req, res) => {
 });
 
 
+// Rota - novo usuário
+
 router.post('/register', async (req, res) => {
   const { name, email, senha, cod } = req.body;
   const verification = await Verifications.findOne({
@@ -133,7 +133,7 @@ router.post('/register', async (req, res) => {
 
 
 
-/*LOGIN*/
+// Rota - Login
 
 router.post('/login', async (req, res) => {
   const { email, senha } = req.body;
@@ -172,10 +172,11 @@ router.get('/scores', async (req, res) => {
     res.status(500).json({ error: 'Erro interno do servidor' });
   }
 });
- // Tabela
+
+// Rota - Tabela
 
  router.get('/api/getUserScore', async (req, res) => {
-  const userId = req.query.userId; // Obtenha o userId da query string ou do token
+  const userId = req.query.userId;
 
   if (!userId) {
     return res.status(400).json({ error: 'Usuário não fornecido' });
@@ -209,18 +210,16 @@ router.get('/scores', async (req, res) => {
   }
 });
 
-// Add run
+// Adicionando a run
 
 router.post('/save-score', async (req, res) => {
     const { userId, score } = req.body; // Receba o userId e a pontuação do front-end
 
     try {
-        // Verifique se o usuário e a pontuação foram fornecidos
         if (!userId || !score) {
             return res.status(400).json({ error: 'User ID e score são obrigatórios.' });
         }
 
-        // Salve a pontuação no banco de dados
         const newScore = await Runs.create({
             iduser: userId,
             pontuacao: score
