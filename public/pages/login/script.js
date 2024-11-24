@@ -98,7 +98,7 @@ document.getElementById('inputs').addEventListener('submit', async (event) => {
 
         localStorage.setItem('isLoggedIn', 'true');
         localStorage.setItem('userName', name);
-        localStorage.setItem('idUser', result.id);
+        localStorage.setItem('idUser', result);
         window.location.href = "../Home-logged/index.html";
       } else {
         const error = await response.json();

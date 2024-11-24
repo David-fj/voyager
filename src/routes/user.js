@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { User, Runs, Verifications, Emaild } = require('../models');
+const { User, Runs, Verifications, Emaild, sequelize } = require('../models');
 const { getUsersWithScores } = require('../code/tableLogin')
 const bcrypt = require('bcryptjs');
 
@@ -8,26 +8,43 @@ const crypto = require('crypto');
 const nodemailer = require('nodemailer');
 const { error } = require('console');
 const { where } = require('sequelize');
+const { QueryTypes } = require('sequelize');
+const { type } = require('os');
 
 // Rota - Confirmação de Gmail
 
+// VERIFIQUEDE
+
 router.post('/confirm', async (req, res) => {
   const { email } = req.body;
-  const [emailConfig] = await Emaild.findAll({
-    attributes: ['host', 'port', 'secure', 'user', 'pass'],
-    where: {id: 1}
-  })
+  // Selecionar o email "voyager", pelo que eu entendi
+  // const [emailConfig] = await Emaild.findAll({
+  //   attributes: ['host', 'port', 'secure', 'user', 'pass'],
+  //   where: {id: 1}
+  // })
+  const [emailConfig] = await sequelize.query('SELECT host, port, secure, user, pass FROM Emailds WHERE id = 1', {
+    type: QueryTypes.SELECT,
+  });
 
-  const { host, port, secure, user, pass } = emailConfig.get()
+  // Não entendi muito bem isso aqui (mas acho q so esta pegando os atributos do email, so isso)
+  const { host, port, secure, user, pass } = emailConfig;
+  console.log(emailConfig);
   if (!email) {
     return res.status(400).json({ error: 'Email não fornecido' });
   }
   
   const codigoVerificacao = crypto.randomInt(100000, 999999).toString();
-  await Verifications.create({
-    email,
-    codigo: codigoVerificacao
-  });
+  // Na tabela de "Verifications" vai criar um bagulho novo no banco de dados
+  // Fiquei com um pouco de dúvida no "email," não entendi o que ele estaria pegando
+  // await Verifications.create({
+  //   email,
+  //   codigo: codigoVerificacao
+  // });
+  await sequelize.query("INSERT INTO Verifications (email, codigo, createdAt, updatedAt) VALUES (?, ?, now(), now())", {
+    replacements: [email, codigoVerificacao],
+    type: QueryTypes.INSERT,
+  })
+
   console.log(host, port, secure, user, pass)
   console.log(emailConfig)
   const configEmail = nodemailer.createTransport({
@@ -99,11 +116,19 @@ router.post('/confirm', async (req, res) => {
 
 // Rota - novo usuário
 
+// VERIFIQUEDE
+
 router.post('/register', async (req, res) => {
   const { name, email, senha, cod } = req.body;
-  const verification = await Verifications.findOne({
-    where: { email, codigo: cod }
-  });
+  // Vai pegar o codigo de verificação
+  // const verification = await Verifications.findOne({
+  //   where: { email, codigo: cod }
+  // });
+  const [verification] = await sequelize.query("SELECT * FROM Verifications WHERE email = ? and codigo = ?", {
+    replacements: [email, cod],
+    type: QueryTypes.SELECT,
+  })
+
   console.log(cod, verification)
   console.log('Sessão no momento do registro:', req.session);
 
@@ -117,11 +142,16 @@ router.post('/register', async (req, res) => {
 
   try {
     const hashedPassword = await bcrypt.hash(senha, 10);
-    const newUser = await User.create({
-      name,
-      email,
-      senha: hashedPassword
-    });
+    // Cria um novo usuario
+    // const newUser = await User.create({
+    //   name,
+    //   email,
+    //   senha: hashedPassword
+    // });
+    const [newUser] = await sequelize.query("INSERT INTO Users (id ,name, email, senha, createdAt, updatedAt) values(null, ?, ?, ?, now(), now())", {
+      replacements: [name, email, hashedPassword],
+      type: QueryTypes.INSERT,
+    })
 
     res.status(201).json(newUser);
   } catch (error) {
@@ -135,6 +165,8 @@ router.post('/register', async (req, res) => {
 
 // Rota - Login
 
+// VERIFIQUEDE
+
 router.post('/login', async (req, res) => {
   const { email, senha } = req.body;
 
@@ -143,9 +175,15 @@ router.post('/login', async (req, res) => {
       return res.status(400).json({ error: 'Email e senha são obrigatórios' });
     }
 
-    const user = await User.findOne({ where: { 
-      email
-    } });
+    // Busca o usuario no banco de patos
+    // const user = await User.findOne({ where: { 
+    //   email
+    // } });
+    const [user] = await sequelize.query("SELECT * FROM Users WHERE email = ?", {
+      replacements: [email],
+      type: QueryTypes.SELECT,
+    })
+
     if (!user) {
        return res.status(401).json({ error: 'Usuário não encontrado' });
      }
@@ -165,6 +203,7 @@ router.post('/login', async (req, res) => {
 
 router.get('/scores', async (req, res) => {
   try {
+    // A query está na pagina "code"
     const scores = await getUsersWithScores();
     res.json(scores);
   } catch (error) {
@@ -175,7 +214,7 @@ router.get('/scores', async (req, res) => {
 
 // Rota - Tabela
 
- router.get('/api/getUserScore', async (req, res) => {
+router.get('/api/getUserScore', async (req, res) => {
   const userId = req.query.userId;
 
   if (!userId) {
@@ -183,22 +222,37 @@ router.get('/scores', async (req, res) => {
   }
 
   try {
-    const userWithScores = await User.findOne({
-      attributes: [
-        'id',
-        'name',
-        [sequelize.fn('MAX', sequelize.col('runs.pontuacao')), 'totalScore'],
-      ],
-      include: [
-        {
-          model: Run,
-          attributes: [],
-        },
-      ],
-      where: { id: userId },
-      group: ['User.id'],
-    });
+    // Vai fazer algo muito legal(q eu n sei)
+    // const userWithScores = await User.findOne({
+    //   attributes: [
+    //     'id',
+    //     'name',
+    //     [sequelize.fn('MAX', sequelize.col('runs.pontuacao')), 'totalScore'],
+    //   ],
+    //   include: [
+    //     {
+    //       model: Run,
+    //       attributes: [],
+    //     },
+    //   ],
+    //   where: { id: userId },
+    //   group: ['User.id'],
+    // });
 
+    const [userWithScores] = await sequelize.query(`SELECT 
+          MAX(Runs.createdAt),
+          COUNT(Runs.id) AS entryCount, 
+          Users.name AS userName, 
+          MAX(Runs.pontuacao) AS totalScore
+        FROM Runs
+        JOIN Users ON Runs.iduser = Users.id
+        WHERE Users.id = ?
+        GROUP BY Users.id
+        ORDER BY totalScore DESC`, {
+      replacements: [userId],
+      type: QueryTypes.SELECT,
+    })
+    console.log(userWithScores);
     if (userWithScores) {
       res.json(userWithScores);
     } else {
@@ -214,16 +268,21 @@ router.get('/scores', async (req, res) => {
 
 router.post('/save-score', async (req, res) => {
     const { userId, score } = req.body; // Receba o userId e a pontuação do front-end
-
     try {
         if (!userId || !score) {
             return res.status(400).json({ error: 'User ID e score são obrigatórios.' });
         }
 
-        const newScore = await Runs.create({
-            iduser: userId,
-            pontuacao: score
-        });
+        // Vai criar uma nova pontuação na tabela "Runs"
+        // const newScore = await Runs.create({
+        //     iduser: userId,
+        //     pontuacao: score
+        // });
+
+        const newScore = await sequelize.query("INSERT INTO Runs (iduser, pontuacao, createdAt, updatedAt) VALUES (?, ?, now(), now())", {
+          replacements: [userId, score],
+          type: QueryTypes.INSERT,
+        })
 
         res.status(201).json({ message: 'Pontuação salva com sucesso!', score: newScore });
     } catch (error) {
@@ -233,6 +292,5 @@ router.post('/save-score', async (req, res) => {
 });
 
 module.exports = router;
-
 
 module.exports = router;
